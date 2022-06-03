@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>Hexo使用文档</title>
+    <link href="/2022/06/03/hexohelp/"/>
+    <url>/2022/06/03/hexohelp/</url>
+    
+    <content type="html"><![CDATA[<h3 id="添加文章"><a href="#添加文章" class="headerlink" title="添加文章"></a>添加文章</h3><h4 id="1、在本地博客根目录鼠标右击点击【Git-bash-here】"><a href="#1、在本地博客根目录鼠标右击点击【Git-bash-here】" class="headerlink" title="1、在本地博客根目录鼠标右击点击【Git bash here】"></a>1、在本地博客根目录鼠标右击点击【Git bash here】</h4><h4 id="2、新建一篇文档"><a href="#2、新建一篇文档" class="headerlink" title="2、新建一篇文档"></a>2、新建一篇文档</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo new 文章名称<br></code></pre></td></tr></table></figure><h4 id="3、编辑文章"><a href="#3、编辑文章" class="headerlink" title="3、编辑文章"></a>3、编辑文章</h4><h4 id="4、发布"><a href="#4、发布" class="headerlink" title="4、发布"></a>4、发布</h4><p>hexo三连</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo clean<br>hexo g<br>hexo d<br></code></pre></td></tr></table></figure><h4 id="5、不出意外一会就可以访问到新文章了"><a href="#5、不出意外一会就可以访问到新文章了" class="headerlink" title="5、不出意外一会就可以访问到新文章了"></a>5、不出意外一会就可以访问到新文章了</h4>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>hexo</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Linux系统开启启动报错：/dev/vda1 contains a file system with errors, check forced.</title>
     <link href="/2022/06/03/a/"/>
     <url>/2022/06/03/a/</url>
