@@ -16,24 +16,27 @@
   <meta name="author" content="Guoxh">
   <meta name="keywords" content="">
   
-    <meta name="description" content="添加文章1、在本地博客根目录鼠标右击点击【Git bash here】2、新建一篇文档1hexo new 文章名称  3、编辑文章4、发布hexo三连 123hexo cleanhexo ghexo d    5、不出意外一会就可以访问到新文章了">
+    <meta name="description" content="问题描述使用云服务器，远程无法登录，通过控制台vnc登录后看到这样的报错，如下： Checking filesystems &#x2F;dev&#x2F;vda1 contains a file system with errors, check forced. &#x2F;dev&#x2F;vda1: Inodes that were part of a corrupted orphan lin">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo使用文档">
-<meta property="og:url" content="http://92cloud.cn/2022/06/03/hexohelp/index.html">
+<meta property="og:title" content="Linux系统开启启动报错：&#x2F;dev&#x2F;vda1 contains a file system with errors, check forced.">
+<meta property="og:url" content="http://92cloud.cn/2022/06/03/53264/index.html">
 <meta property="og:site_name" content="Guoxh &#39;s blog">
-<meta property="og:description" content="添加文章1、在本地博客根目录鼠标右击点击【Git bash here】2、新建一篇文档1hexo new 文章名称  3、编辑文章4、发布hexo三连 123hexo cleanhexo ghexo d    5、不出意外一会就可以访问到新文章了">
+<meta property="og:description" content="问题描述使用云服务器，远程无法登录，通过控制台vnc登录后看到这样的报错，如下： Checking filesystems &#x2F;dev&#x2F;vda1 contains a file system with errors, check forced. &#x2F;dev&#x2F;vda1: Inodes that were part of a corrupted orphan lin">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-06-03T12:44:35.000Z">
-<meta property="article:modified_time" content="2022-06-03T12:48:52.278Z">
+<meta property="og:image" content="http://92cloud.cn/img/byriareeso.png">
+<meta property="og:image" content="http://92cloud.cn/img/fjkmayksqx.png">
+<meta property="article:published_time" content="2022-06-03T12:31:24.000Z">
+<meta property="article:modified_time" content="2022-07-02T10:08:16.642Z">
 <meta property="article:author" content="Guoxh">
-<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://92cloud.cn/img/byriareeso.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Hexo使用文档 - Guoxh &#39;s blog</title>
+  <title>Linux系统开启启动报错：/dev/vda1 contains a file system with errors, check forced. - Guoxh &#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -195,7 +198,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Hexo使用文档"></span>
+            <span id="subtitle" data-typed-text="Linux系统开启启动报错：/dev/vda1 contains a file system with errors, check forced."></span>
           
         </div>
 
@@ -206,7 +209,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-06-03 20:44" pubdate>
+        <time datetime="2022-06-03 20:31" pubdate>
           2022年6月3日 晚上
         </time>
       </span>
@@ -218,7 +221,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          109 字
+          603 字
         
       </span>
     
@@ -229,7 +232,7 @@
         
         
         
-          1 分钟
+          6 分钟
         
       </span>
     
@@ -267,18 +270,30 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Hexo使用文档</h1>
+            <h1 style="display: none">Linux系统开启启动报错：/dev/vda1 contains a file system with errors, check forced.</h1>
             
             <div class="markdown-body">
               
-              <h3 id="添加文章"><a href="#添加文章" class="headerlink" title="添加文章"></a>添加文章</h3><h4 id="1、在本地博客根目录鼠标右击点击【Git-bash-here】"><a href="#1、在本地博客根目录鼠标右击点击【Git-bash-here】" class="headerlink" title="1、在本地博客根目录鼠标右击点击【Git bash here】"></a>1、在本地博客根目录鼠标右击点击【Git bash here】</h4><h4 id="2、新建一篇文档"><a href="#2、新建一篇文档" class="headerlink" title="2、新建一篇文档"></a>2、新建一篇文档</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo new 文章名称<br></code></pre></td></tr></table></figure>
+              <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>使用云服务器，远程无法登录，通过控制台vnc登录后看到这样的报错，如下：</p>
+<p>Checking filesystems</p>
+<p>&#x2F;dev&#x2F;vda1 contains a file system with errors, check forced.</p>
+<p>&#x2F;dev&#x2F;vda1: Inodes that were part of a corrupted orphan linked list found.</p>
+<p>&#x2F;dev&#x2F;vda1: UNEXPECTED INCONSISTENCY: RUN fsck MANUALLY. </p>
+<p>(i.e., without -a or -p options)  FAILED</p>
+<p><img src="/img/byriareeso.png" srcset="/img/loading.gif" lazyload alt="报错截图"></p>
+<h2 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h2><p>一般是强制关机或服务器突然断电所致。</p>
+<h2 id="处理方案"><a href="#处理方案" class="headerlink" title="处理方案"></a>处理方案</h2><h4 id="1、做备份"><a href="#1、做备份" class="headerlink" title="1、做备份"></a>1、做备份</h4><p>首先要<a target="_blank" rel="noopener" href="https://cloud.tencent.com/document/product/362/5755?from=10680">创建快照</a>备份当前服务器状态，这样若修复过程中遇到问题或修复未果，我们则可以通过回滚快照恢复服务器到当前的状态。</p>
+<h4 id="2、登录服务器"><a href="#2、登录服务器" class="headerlink" title="2、登录服务器"></a>2、登录服务器</h4><p>当前服务器为故障状态，无法远程登录， 需要登录<a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/cvm/instance/index?rid=1">腾讯云控制台</a>，然后使用<a target="_blank" rel="noopener" href="https://cloud.tencent.com/document/product/213/35701?from=10680">VNC登录</a>服务器。</p>
+<h4 id="3、根据提示输入root密码"><a href="#3、根据提示输入root密码" class="headerlink" title="3、根据提示输入root密码"></a>3、根据提示输入root密码</h4><p><img src="/img/fjkmayksqx.png" srcset="/img/loading.gif" lazyload></p>
+<h4 id="4、卸载文件系统"><a href="#4、卸载文件系统" class="headerlink" title="4、卸载文件系统"></a>4、卸载文件系统</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">umount /dev/vda1<br></code></pre></td></tr></table></figure>
 
-<h4 id="3、编辑文章"><a href="#3、编辑文章" class="headerlink" title="3、编辑文章"></a>3、编辑文章</h4><h4 id="4、发布"><a href="#4、发布" class="headerlink" title="4、发布"></a>4、发布</h4><p>hexo三连</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo clean<br>hexo g<br>hexo d<br></code></pre></td></tr></table></figure>
+<h4 id="5、使用fsck命令进行修复"><a href="#5、使用fsck命令进行修复" class="headerlink" title="5、使用fsck命令进行修复"></a>5、使用fsck命令进行修复</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">fsck.ext3  -p /dev/vda1<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-comment"># 这里的ext3要根据自身文件系统类型选择，可通过 df -Th 命令查看。</span></span><br></code></pre></td></tr></table></figure>
 
+<p>若上面的命令修复无果，可使用下面的命令尝试修复。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">fsck.ext3 -y /dev/vda1<br></code></pre></td></tr></table></figure>
 
-
-<h4 id="5、不出意外一会就可以访问到新文章了"><a href="#5、不出意外一会就可以访问到新文章了" class="headerlink" title="5、不出意外一会就可以访问到新文章了"></a>5、不出意外一会就可以访问到新文章了</h4>
+<p><strong>提示完成后，reboot重启服务器即可正常启动。</strong></p>
+<h1 id=""><a href="#" class="headerlink" title=""></a></h1>
               
             </div>
             <hr/>
@@ -289,7 +304,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/hexo/">#hexo</a>
+        <a href="/tags/Linux/">#Linux</a>
       
     </div>
   
@@ -301,8 +316,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Hexo使用文档</div>
-      <div>http://92cloud.cn/2022/06/03/hexohelp/</div>
+      <div>Linux系统开启启动报错：/dev/vda1 contains a file system with errors, check forced.</div>
+      <div>http://92cloud.cn/2022/06/03/53264/</div>
     </div>
     <div class="license-meta">
       
@@ -344,12 +359,18 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2022/06/03/23455/" title="Ubuntu系统网卡异常">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Ubuntu系统网卡异常</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/06/03/a/" title="Linux系统开启启动报错：/dev/vda1 contains a file system with errors, check forced.">
-                        <span class="hidden-mobile">Linux系统开启启动报错：/dev/vda1 contains a file system with errors, check forced.</span>
+                      <a href="/2022/06/03/32451/" title="磁盘扩容报错">
+                        <span class="hidden-mobile">磁盘扩容报错</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

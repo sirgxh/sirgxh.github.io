@@ -222,13 +222,13 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2022/06/03/hexohelp/" target="_self">
+        <a href="/2022/06/03/1/" target="_self">
           Hexo使用文档
         </a>
       </h1>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2022/06/03/hexohelp/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2022/06/03/1/" target="_self">
         <div>
           添加文章1、在本地博客根目录鼠标右击点击【Git bash here】2、新建一篇文档1hexo new 文章名称  3、编辑文章4、发布hexo三连 123hexo cleanhexo ghexo d    5、不出意外一会就可以访问到新文章了
         </div>
@@ -262,13 +262,53 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2022/06/03/a/" target="_self">
+        <a href="/2022/06/03/23455/" target="_self">
+          Ubuntu系统网卡异常
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2022/06/03/23455/" target="_self">
+        <div>
+          Ubuntu系统网卡异常问题现象ifconfig 查看没有获取到IP。 启动网络服务报错此服务找不到  排查过程1、执行dhclient命令获取到了IP了，网络也通了，以为问题解决了 但是重启机器后依然是获取不到IP的状态； 2、网上看了下Ubuntu 20是 netplan 工具管理的网络，在机器上面执行了下，发现没有这个命令；  3、执行如下命令安装一下这个命令 1sudo apt-get i
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-06-03 20:44" pubdate>
+              2022-06-03
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/ubuntu/">#ubuntu</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/06/03/53264/" target="_self">
           Linux系统开启启动报错：/dev/vda1 contains a file system with errors, check forced.
         </a>
       </h1>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2022/06/03/a/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2022/06/03/53264/" target="_self">
         <div>
           问题描述使用云服务器，远程无法登录，通过控制台vnc登录后看到这样的报错，如下： Checking filesystems &#x2F;dev&#x2F;vda1 contains a file system with errors, check forced. &#x2F;dev&#x2F;vda1: Inodes that were part of a corrupted orphan lin
         </div>
@@ -302,15 +342,99 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2022/06/03/AES/" target="_self">
+        <a href="/2022/06/03/32451/" target="_self">
+          磁盘扩容报错
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2022/06/03/32451/" target="_self">
+        <div>
+          报错信息：resize2fs: New size too large to be expressed in 32 bits报错原因:普通ext4文件系统，无法处理大于16TB的分区 解决办法：下载编译e2fsprogs-1.43以后的版本（通常下载最新稳定版本), 之后用该版本的resize2fs 加上-b选项扩容下载最新版本的稳定tag 1234567wget https:&#x2F;&#x2F;git.kerne
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-06-03 19:30" pubdate>
+              2022-06-03
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Linux/">#Linux</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/06/03/63475/" target="_self">
           如何检测处理器是否支持AES-NI指令集？
         </a>
       </h1>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2022/06/03/AES/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2022/06/03/63475/" target="_self">
         <div>
           什么是AES-NI？高级加密标准指令集（或称英特尔高级加密标准新指令，简称AES-NI）是一个x86指令集架构的扩展，用于Intel和AMD微处理器，由Intel在2008年3月提出。该指令集的目的是改进应用程序使用高级加密标准（AES）执行加密和解密的速度。 详细介绍可参考链接 Windows系统Windows服务器借助第三方工具，我这里使用的是 CPU-Z，点击下载 此处下载、安装步骤省略，直
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-06-03 19:30" pubdate>
+              2022-06-03
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Linux/">#Linux</a>
+            
+              <a href="/tags/Mac/">#Mac</a>
+            
+              <a href="/tags/Windows/">#Windows</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/06/03/%E6%A8%A1%E6%9D%BF/" target="_self">
+          df 和 du 命令显示不一致？
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2022/06/03/%E6%A8%A1%E6%9D%BF/" target="_self">
+        <div>
+          常见原因1、有程序打开了文件，此文件被删除，但是程序没关闭，此文件所占用空间未释放。通过lsof命令可确认此情况1lsof  | grep -i delete  2、挂载点下有子目录被再次挂在到别处，这种情况下会隐藏原目录内容。 什么是有嵌套挂载？  系统盘目录是挂在到根目录&#x2F;的，但是数据盘是挂在到根目录下的&#x2F;data目录，这时就是嵌套挂载。  举例说明  例如&#x2F;da
         </div>
       </a>
 

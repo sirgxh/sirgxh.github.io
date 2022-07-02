@@ -16,27 +16,24 @@
   <meta name="author" content="Guoxh">
   <meta name="keywords" content="">
   
-    <meta name="description" content="问题描述使用云服务器，远程无法登录，通过控制台vnc登录后看到这样的报错，如下： Checking filesystems &#x2F;dev&#x2F;vda1 contains a file system with errors, check forced. &#x2F;dev&#x2F;vda1: Inodes that were part of a corrupted orphan lin">
+    <meta name="description" content="报错信息：resize2fs: New size too large to be expressed in 32 bits报错原因:普通ext4文件系统，无法处理大于16TB的分区 解决办法：下载编译e2fsprogs-1.43以后的版本（通常下载最新稳定版本), 之后用该版本的resize2fs 加上-b选项扩容下载最新版本的稳定tag 1234567wget https:&#x2F;&#x2F;git.kerne">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux系统开启启动报错：&#x2F;dev&#x2F;vda1 contains a file system with errors, check forced.">
-<meta property="og:url" content="http://92cloud.cn/2022/06/03/a/index.html">
+<meta property="og:title" content="磁盘扩容报错">
+<meta property="og:url" content="http://92cloud.cn/2022/06/03/32451/index.html">
 <meta property="og:site_name" content="Guoxh &#39;s blog">
-<meta property="og:description" content="问题描述使用云服务器，远程无法登录，通过控制台vnc登录后看到这样的报错，如下： Checking filesystems &#x2F;dev&#x2F;vda1 contains a file system with errors, check forced. &#x2F;dev&#x2F;vda1: Inodes that were part of a corrupted orphan lin">
+<meta property="og:description" content="报错信息：resize2fs: New size too large to be expressed in 32 bits报错原因:普通ext4文件系统，无法处理大于16TB的分区 解决办法：下载编译e2fsprogs-1.43以后的版本（通常下载最新稳定版本), 之后用该版本的resize2fs 加上-b选项扩容下载最新版本的稳定tag 1234567wget https:&#x2F;&#x2F;git.kerne">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://92cloud.cn/img/byriareeso.png">
-<meta property="og:image" content="http://92cloud.cn/img/fjkmayksqx.png">
-<meta property="article:published_time" content="2022-06-03T12:31:24.000Z">
-<meta property="article:modified_time" content="2022-06-03T13:32:02.849Z">
+<meta property="article:published_time" content="2022-06-03T11:30:21.000Z">
+<meta property="article:modified_time" content="2022-07-02T10:24:52.248Z">
 <meta property="article:author" content="Guoxh">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://92cloud.cn/img/byriareeso.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Linux系统开启启动报错：/dev/vda1 contains a file system with errors, check forced. - Guoxh &#39;s blog</title>
+  <title>磁盘扩容报错 - Guoxh &#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -198,7 +195,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Linux系统开启启动报错：/dev/vda1 contains a file system with errors, check forced."></span>
+            <span id="subtitle" data-typed-text="磁盘扩容报错"></span>
           
         </div>
 
@@ -209,7 +206,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-06-03 20:31" pubdate>
+        <time datetime="2022-06-03 19:30" pubdate>
           2022年6月3日 晚上
         </time>
       </span>
@@ -221,7 +218,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          603 字
+          430 字
         
       </span>
     
@@ -232,7 +229,7 @@
         
         
         
-          6 分钟
+          4 分钟
         
       </span>
     
@@ -270,30 +267,20 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Linux系统开启启动报错：/dev/vda1 contains a file system with errors, check forced.</h1>
+            <h1 style="display: none">磁盘扩容报错</h1>
             
             <div class="markdown-body">
               
-              <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>使用云服务器，远程无法登录，通过控制台vnc登录后看到这样的报错，如下：</p>
-<p>Checking filesystems</p>
-<p>&#x2F;dev&#x2F;vda1 contains a file system with errors, check forced.</p>
-<p>&#x2F;dev&#x2F;vda1: Inodes that were part of a corrupted orphan linked list found.</p>
-<p>&#x2F;dev&#x2F;vda1: UNEXPECTED INCONSISTENCY: RUN fsck MANUALLY. </p>
-<p>(i.e., without -a or -p options)  FAILED</p>
-<p><img src="/img/byriareeso.png" srcset="/img/loading.gif" lazyload alt="报错截图"></p>
-<h2 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h2><p>一般是强制关机或服务器突然断电所致。</p>
-<h2 id="处理方案"><a href="#处理方案" class="headerlink" title="处理方案"></a>处理方案</h2><h4 id="1、做备份"><a href="#1、做备份" class="headerlink" title="1、做备份"></a>1、做备份</h4><p>首先要<a target="_blank" rel="noopener" href="https://cloud.tencent.com/document/product/362/5755?from=10680">创建快照</a>备份当前服务器状态，这样若修复过程中遇到问题或修复未果，我们则可以通过回滚快照恢复服务器到当前的状态。</p>
-<h4 id="2、登录服务器"><a href="#2、登录服务器" class="headerlink" title="2、登录服务器"></a>2、登录服务器</h4><p>当前服务器为故障状态，无法远程登录， 需要登录<a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/cvm/instance/index?rid=1">腾讯云控制台</a>，然后使用<a target="_blank" rel="noopener" href="https://cloud.tencent.com/document/product/213/35701?from=10680">VNC登录</a>服务器。</p>
-<h4 id="3、根据提示输入root密码"><a href="#3、根据提示输入root密码" class="headerlink" title="3、根据提示输入root密码"></a>3、根据提示输入root密码</h4><p><img src="/img/fjkmayksqx.png" srcset="/img/loading.gif" lazyload></p>
-<h4 id="4、卸载文件系统"><a href="#4、卸载文件系统" class="headerlink" title="4、卸载文件系统"></a>4、卸载文件系统</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">umount /dev/vda1<br></code></pre></td></tr></table></figure>
+              <h2 id="报错信息："><a href="#报错信息：" class="headerlink" title="报错信息："></a>报错信息：</h2><h2 id="resize2fs-New-size-too-large-to-be-expressed-in-32-bits"><a href="#resize2fs-New-size-too-large-to-be-expressed-in-32-bits" class="headerlink" title="resize2fs: New size too large to be expressed in 32 bits"></a>resize2fs: New size too large to be expressed in 32 bits</h2><h2 id="报错原因"><a href="#报错原因" class="headerlink" title="报错原因:"></a>报错原因:</h2><p>普通ext4文件系统，无法处理大于16TB的分区</p>
+<h2 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h2><p>下载编译e2fsprogs-1.43以后的版本（通常下载最新稳定版本), 之后用该版本的resize2fs 加上-b选项扩容<br>下载最新版本的稳定tag</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell">wget https://git.kernel.org/pub/scm/fs/ext2/e2fsprogs.git/snapshot/e2fsprogs-1.45.6.tar.gz<br>tar xf e2fsprogs-1.45.6.tar.gz <br>cd e2fsprogs-1.45.6/<br>./configure --prefix=/usr/local/e2fsprogs<br>make<br>make install<br>cd /usr/local/e2fsprogs/sbin/<br></code></pre></td></tr></table></figure>
 
-<h4 id="5、使用fsck命令进行修复"><a href="#5、使用fsck命令进行修复" class="headerlink" title="5、使用fsck命令进行修复"></a>5、使用fsck命令进行修复</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">fsck.ext3  -p /dev/vda1<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-comment"># 这里的ext3要根据自身文件系统类型选择，可通过 df -Th 命令查看。</span></span><br></code></pre></td></tr></table></figure>
 
-<p>若上面的命令修复无果，可使用下面的命令尝试修复。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">fsck.ext3 -y /dev/vda1<br></code></pre></td></tr></table></figure>
 
-<p><strong>提示完成后，reboot重启服务器即可正常启动。</strong></p>
-<h1 id=""><a href="#" class="headerlink" title=""></a></h1>
+<h3 id="注意修改参数"><a href="#注意修改参数" class="headerlink" title="注意修改参数"></a>注意修改参数</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">./e2fsck /dev/xxxx<br>./resize2fs -b /dev/xxxx<br></code></pre></td></tr></table></figure>
+
+
+
               
             </div>
             <hr/>
@@ -316,8 +303,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Linux系统开启启动报错：/dev/vda1 contains a file system with errors, check forced.</div>
-      <div>http://92cloud.cn/2022/06/03/a/</div>
+      <div>磁盘扩容报错</div>
+      <div>http://92cloud.cn/2022/06/03/32451/</div>
     </div>
     <div class="license-meta">
       
@@ -359,9 +346,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/06/03/hexohelp/" title="Hexo使用文档">
+                      <a href="/2022/06/03/53264/" title="Linux系统开启启动报错：/dev/vda1 contains a file system with errors, check forced.">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Hexo使用文档</span>
+                        <span class="hidden-mobile">Linux系统开启启动报错：/dev/vda1 contains a file system with errors, check forced.</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -369,7 +356,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/06/03/AES/" title="如何检测处理器是否支持AES-NI指令集？">
+                      <a href="/2022/06/03/63475/" title="如何检测处理器是否支持AES-NI指令集？">
                         <span class="hidden-mobile">如何检测处理器是否支持AES-NI指令集？</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
