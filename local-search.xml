@@ -4,91 +4,11 @@
   
   
   <entry>
-    <title>Ubuntu系统网卡异常</title>
-    <link href="/2022/06/03/23455/"/>
-    <url>/2022/06/03/23455/</url>
-    
-    <content type="html"><![CDATA[<h1 id="Ubuntu系统网卡异常"><a href="#Ubuntu系统网卡异常" class="headerlink" title="Ubuntu系统网卡异常"></a>Ubuntu系统网卡异常</h1><h2 id="问题现象"><a href="#问题现象" class="headerlink" title="问题现象"></a>问题现象</h2><p>ifconfig 查看没有获取到IP。</p><p>启动网络服务报错此服务找不到</p><p><img src="C:\Users\gxh\AppData\Local\Temp{B2311415-988A-4D0D-B835-24B46AEA00B3}\截屏2022-07-02%2017.29.15.png" alt="截屏2022-07-02 17.29.15.png"></p><h2 id="排查过程"><a href="#排查过程" class="headerlink" title="排查过程"></a>排查过程</h2><p>1、执行dhclient命令获取到了IP了，网络也通了，以为问题解决了</p><p>但是重启机器后依然是获取不到IP的状态；</p><p>2、网上看了下Ubuntu 20是 <strong>netplan</strong> 工具管理的网络，在机器上面执行了下，发现没有这个命令；</p><p><img src="C:\Users\gxh\AppData\Local\Temp{64FFA14E-5AB8-408B-820A-34F584FB7695}\截屏2022-07-02%2017.33.18.png" alt="截屏2022-07-02 17.33.18.png"></p><p>3、执行如下命令安装一下这个命令</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo apt-get install netplan.io<br></code></pre></td></tr></table></figure><p>4、设置 systemd-networkd 服务开机自启。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo systemctl enable systemd-networkd.service<br></code></pre></td></tr></table></figure><p>5、重启服务器网络正常启动。</p><p><img src="C:\Users\gxh\AppData\Local\Temp{E365D446-D307-4B99-9314-AC2954845081}\截屏2022-07-02%2018.05.01.png" alt="截屏2022-07-02 18.05.01.png"></p>]]></content>
-    
-    
-    
-    <tags>
-      
-      <tag>ubuntu</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Hexo使用文档</title>
-    <link href="/2022/06/03/1/"/>
-    <url>/2022/06/03/1/</url>
-    
-    <content type="html"><![CDATA[<h3 id="添加文章"><a href="#添加文章" class="headerlink" title="添加文章"></a>添加文章</h3><h4 id="1、在本地博客根目录鼠标右击点击【Git-bash-here】"><a href="#1、在本地博客根目录鼠标右击点击【Git-bash-here】" class="headerlink" title="1、在本地博客根目录鼠标右击点击【Git bash here】"></a>1、在本地博客根目录鼠标右击点击【Git bash here】</h4><h4 id="2、新建一篇文档"><a href="#2、新建一篇文档" class="headerlink" title="2、新建一篇文档"></a>2、新建一篇文档</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo new 文章名称<br></code></pre></td></tr></table></figure><h4 id="3、编辑文章"><a href="#3、编辑文章" class="headerlink" title="3、编辑文章"></a>3、编辑文章</h4><h4 id="4、发布"><a href="#4、发布" class="headerlink" title="4、发布"></a>4、发布</h4><p>hexo三连</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo clean<br>hexo g<br>hexo d<br></code></pre></td></tr></table></figure><h4 id="5、不出意外一会就可以访问到新文章了"><a href="#5、不出意外一会就可以访问到新文章了" class="headerlink" title="5、不出意外一会就可以访问到新文章了"></a>5、不出意外一会就可以访问到新文章了</h4>]]></content>
-    
-    
-    
-    <tags>
-      
-      <tag>hexo</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>Linux系统开启启动报错：/dev/vda1 contains a file system with errors, check forced.</title>
     <link href="/2022/06/03/53264/"/>
     <url>/2022/06/03/53264/</url>
     
     <content type="html"><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>使用云服务器，远程无法登录，通过控制台vnc登录后看到这样的报错，如下：</p><p>Checking filesystems</p><p>&#x2F;dev&#x2F;vda1 contains a file system with errors, check forced.</p><p>&#x2F;dev&#x2F;vda1: Inodes that were part of a corrupted orphan linked list found.</p><p>&#x2F;dev&#x2F;vda1: UNEXPECTED INCONSISTENCY: RUN fsck MANUALLY. </p><p>(i.e., without -a or -p options)  FAILED</p><p><img src="/img/byriareeso.png" alt="报错截图"></p><h2 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h2><p>一般是强制关机或服务器突然断电所致。</p><h2 id="处理方案"><a href="#处理方案" class="headerlink" title="处理方案"></a>处理方案</h2><h4 id="1、做备份"><a href="#1、做备份" class="headerlink" title="1、做备份"></a>1、做备份</h4><p>首先要<a href="https://cloud.tencent.com/document/product/362/5755?from=10680">创建快照</a>备份当前服务器状态，这样若修复过程中遇到问题或修复未果，我们则可以通过回滚快照恢复服务器到当前的状态。</p><h4 id="2、登录服务器"><a href="#2、登录服务器" class="headerlink" title="2、登录服务器"></a>2、登录服务器</h4><p>当前服务器为故障状态，无法远程登录， 需要登录<a href="https://console.cloud.tencent.com/cvm/instance/index?rid=1">腾讯云控制台</a>，然后使用<a href="https://cloud.tencent.com/document/product/213/35701?from=10680">VNC登录</a>服务器。</p><h4 id="3、根据提示输入root密码"><a href="#3、根据提示输入root密码" class="headerlink" title="3、根据提示输入root密码"></a>3、根据提示输入root密码</h4><p><img src="/img/fjkmayksqx.png"></p><h4 id="4、卸载文件系统"><a href="#4、卸载文件系统" class="headerlink" title="4、卸载文件系统"></a>4、卸载文件系统</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">umount /dev/vda1<br></code></pre></td></tr></table></figure><h4 id="5、使用fsck命令进行修复"><a href="#5、使用fsck命令进行修复" class="headerlink" title="5、使用fsck命令进行修复"></a>5、使用fsck命令进行修复</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">fsck.ext3  -p /dev/vda1<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-comment"># 这里的ext3要根据自身文件系统类型选择，可通过 df -Th 命令查看。</span></span><br></code></pre></td></tr></table></figure><p>若上面的命令修复无果，可使用下面的命令尝试修复。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">fsck.ext3 -y /dev/vda1<br></code></pre></td></tr></table></figure><p><strong>提示完成后，reboot重启服务器即可正常启动。</strong></p><h1 id=""><a href="#" class="headerlink" title=""></a></h1>]]></content>
-    
-    
-    
-    <tags>
-      
-      <tag>Linux</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>df 和 du 命令显示不一致？</title>
-    <link href="/2022/06/03/52536/"/>
-    <url>/2022/06/03/52536/</url>
-    
-    <content type="html"><![CDATA[<h2 id="常见原因"><a href="#常见原因" class="headerlink" title="常见原因"></a>常见原因</h2><h4 id="1、有程序打开了文件，此文件被删除，但是程序没关闭，此文件所占用空间未释放。通过lsof命令可确认此情况"><a href="#1、有程序打开了文件，此文件被删除，但是程序没关闭，此文件所占用空间未释放。通过lsof命令可确认此情况" class="headerlink" title="1、有程序打开了文件，此文件被删除，但是程序没关闭，此文件所占用空间未释放。通过lsof命令可确认此情况"></a>1、有程序打开了文件，此文件被删除，但是程序没关闭，此文件所占用空间未释放。通过lsof命令可确认此情况</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">lsof  | grep -i delete<br></code></pre></td></tr></table></figure><h4 id="2、挂载点下有子目录被再次挂在到别处，这种情况下会隐藏原目录内容。"><a href="#2、挂载点下有子目录被再次挂在到别处，这种情况下会隐藏原目录内容。" class="headerlink" title="2、挂载点下有子目录被再次挂在到别处，这种情况下会隐藏原目录内容。"></a>2、挂载点下有子目录被再次挂在到别处，这种情况下会隐藏原目录内容。</h4><ul><li>什么是有嵌套挂载？</li></ul><p>系统盘目录是挂在到根目录&#x2F;的，但是数据盘是挂在到根目录下的&#x2F;data目录，这时就是嵌套挂载。</p><ul><li>举例说明</li></ul><p>例如&#x2F;data目录原来有5G数据，但是此时将 数据盘vdb挂在到&#x2F;data目录，此时du统计不到原&#x2F;data目录的5G数据。</p><p>这时我们想要在不卸载数据盘的情况下确认根目录下的data目录原本是否有数据，则需要bind挂载它的上层目录&#x2F;：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">mkdir -p /new; mount -o bind / /new ; du -sh /new ; umount /new<br></code></pre></td></tr></table></figure><h4 id="3、对于共享文件系统，可能会被其他服务器挂载了，请检查另外的服务器是否存在以上1和2-的场景"><a href="#3、对于共享文件系统，可能会被其他服务器挂载了，请检查另外的服务器是否存在以上1和2-的场景" class="headerlink" title="3、对于共享文件系统，可能会被其他服务器挂载了，请检查另外的服务器是否存在以上1和2 的场景"></a>3、对于共享文件系统，可能会被其他服务器挂载了，请检查另外的服务器是否存在以上1和2 的场景</h4><h4 id="4、xfs文件系统异常"><a href="#4、xfs文件系统异常" class="headerlink" title="4、xfs文件系统异常"></a>4、xfs文件系统异常</h4><p>如果是xfs文件系统，已排除上诉3种情况，重启机器后，空间还未释放，可以检测下&#x2F;var&#x2F;log&#x2F;messages日志文件是否有文件系统相关报错，在确保数据已备份的情况下，使用 xfs_repair 命令修复。</p>]]></content>
-    
-    
-    
-    <tags>
-      
-      <tag>Linux</tag>
-      
-      <tag>Mac</tag>
-      
-      <tag>Windows</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>磁盘扩容报错</title>
-    <link href="/2022/06/03/32451/"/>
-    <url>/2022/06/03/32451/</url>
-    
-    <content type="html"><![CDATA[<h2 id="报错信息："><a href="#报错信息：" class="headerlink" title="报错信息："></a>报错信息：</h2><h2 id="resize2fs-New-size-too-large-to-be-expressed-in-32-bits"><a href="#resize2fs-New-size-too-large-to-be-expressed-in-32-bits" class="headerlink" title="resize2fs: New size too large to be expressed in 32 bits"></a>resize2fs: New size too large to be expressed in 32 bits</h2><h2 id="报错原因"><a href="#报错原因" class="headerlink" title="报错原因:"></a>报错原因:</h2><p>普通ext4文件系统，无法处理大于16TB的分区</p><h2 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h2><p>下载编译e2fsprogs-1.43以后的版本（通常下载最新稳定版本), 之后用该版本的resize2fs 加上-b选项扩容<br>下载最新版本的稳定tag</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell">wget https://git.kernel.org/pub/scm/fs/ext2/e2fsprogs.git/snapshot/e2fsprogs-1.45.6.tar.gz<br>tar xf e2fsprogs-1.45.6.tar.gz <br>cd e2fsprogs-1.45.6/<br>./configure --prefix=/usr/local/e2fsprogs<br>make<br>make install<br>cd /usr/local/e2fsprogs/sbin/<br></code></pre></td></tr></table></figure><h3 id="注意修改参数"><a href="#注意修改参数" class="headerlink" title="注意修改参数"></a>注意修改参数</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">./e2fsck /dev/xxxx<br>./resize2fs -b /dev/xxxx<br></code></pre></td></tr></table></figure>]]></content>
     
     
     
@@ -133,6 +53,86 @@
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
     
     
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>df 和 du 命令显示不一致？</title>
+    <link href="/2021/12/11/52536/"/>
+    <url>/2021/12/11/52536/</url>
+    
+    <content type="html"><![CDATA[<h2 id="常见原因"><a href="#常见原因" class="headerlink" title="常见原因"></a>常见原因</h2><h4 id="1、有程序打开了文件，此文件被删除，但是程序没关闭，此文件所占用空间未释放。通过lsof命令可确认此情况"><a href="#1、有程序打开了文件，此文件被删除，但是程序没关闭，此文件所占用空间未释放。通过lsof命令可确认此情况" class="headerlink" title="1、有程序打开了文件，此文件被删除，但是程序没关闭，此文件所占用空间未释放。通过lsof命令可确认此情况"></a>1、有程序打开了文件，此文件被删除，但是程序没关闭，此文件所占用空间未释放。通过lsof命令可确认此情况</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">lsof  | grep -i delete<br></code></pre></td></tr></table></figure><h4 id="2、挂载点下有子目录被再次挂在到别处，这种情况下会隐藏原目录内容。"><a href="#2、挂载点下有子目录被再次挂在到别处，这种情况下会隐藏原目录内容。" class="headerlink" title="2、挂载点下有子目录被再次挂在到别处，这种情况下会隐藏原目录内容。"></a>2、挂载点下有子目录被再次挂在到别处，这种情况下会隐藏原目录内容。</h4><ul><li>什么是有嵌套挂载？</li></ul><p>系统盘目录是挂在到根目录&#x2F;的，但是数据盘是挂在到根目录下的&#x2F;data目录，这时就是嵌套挂载。</p><ul><li>举例说明</li></ul><p>例如&#x2F;data目录原来有5G数据，但是此时将 数据盘vdb挂在到&#x2F;data目录，此时du统计不到原&#x2F;data目录的5G数据。</p><p>这时我们想要在不卸载数据盘的情况下确认根目录下的data目录原本是否有数据，则需要bind挂载它的上层目录&#x2F;：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">mkdir -p /new; mount -o bind / /new ; du -sh /new ; umount /new<br></code></pre></td></tr></table></figure><h4 id="3、对于共享文件系统，可能会被其他服务器挂载了，请检查另外的服务器是否存在以上1和2-的场景"><a href="#3、对于共享文件系统，可能会被其他服务器挂载了，请检查另外的服务器是否存在以上1和2-的场景" class="headerlink" title="3、对于共享文件系统，可能会被其他服务器挂载了，请检查另外的服务器是否存在以上1和2 的场景"></a>3、对于共享文件系统，可能会被其他服务器挂载了，请检查另外的服务器是否存在以上1和2 的场景</h4><h4 id="4、xfs文件系统异常"><a href="#4、xfs文件系统异常" class="headerlink" title="4、xfs文件系统异常"></a>4、xfs文件系统异常</h4><p>如果是xfs文件系统，已排除上诉3种情况，重启机器后，空间还未释放，可以检测下&#x2F;var&#x2F;log&#x2F;messages日志文件是否有文件系统相关报错，在确保数据已备份的情况下，使用 xfs_repair 命令修复。</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+      <tag>du</tag>
+      
+      <tag>sh</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>磁盘扩容报错</title>
+    <link href="/2021/10/06/32451/"/>
+    <url>/2021/10/06/32451/</url>
+    
+    <content type="html"><![CDATA[<h2 id="报错信息："><a href="#报错信息：" class="headerlink" title="报错信息："></a>报错信息：</h2><h2 id="resize2fs-New-size-too-large-to-be-expressed-in-32-bits"><a href="#resize2fs-New-size-too-large-to-be-expressed-in-32-bits" class="headerlink" title="resize2fs: New size too large to be expressed in 32 bits"></a>resize2fs: New size too large to be expressed in 32 bits</h2><h2 id="报错原因"><a href="#报错原因" class="headerlink" title="报错原因:"></a>报错原因:</h2><p>普通ext4文件系统，无法处理大于16TB的分区</p><h2 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h2><p>下载编译e2fsprogs-1.43以后的版本（通常下载最新稳定版本), 之后用该版本的resize2fs 加上-b选项扩容<br>下载最新版本的稳定tag</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell">wget https://git.kernel.org/pub/scm/fs/ext2/e2fsprogs.git/snapshot/e2fsprogs-1.45.6.tar.gz<br>tar xf e2fsprogs-1.45.6.tar.gz <br>cd e2fsprogs-1.45.6/<br>./configure --prefix=/usr/local/e2fsprogs<br>make<br>make install<br>cd /usr/local/e2fsprogs/sbin/<br></code></pre></td></tr></table></figure><h3 id="注意修改参数"><a href="#注意修改参数" class="headerlink" title="注意修改参数"></a>注意修改参数</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">./e2fsck /dev/xxxx<br>./resize2fs -b /dev/xxxx<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Hexo使用文档</title>
+    <link href="/2021/07/06/1/"/>
+    <url>/2021/07/06/1/</url>
+    
+    <content type="html"><![CDATA[<h3 id="添加文章"><a href="#添加文章" class="headerlink" title="添加文章"></a>添加文章</h3><h4 id="1、在本地博客根目录鼠标右击点击【Git-bash-here】"><a href="#1、在本地博客根目录鼠标右击点击【Git-bash-here】" class="headerlink" title="1、在本地博客根目录鼠标右击点击【Git bash here】"></a>1、在本地博客根目录鼠标右击点击【Git bash here】</h4><h4 id="2、新建一篇文档"><a href="#2、新建一篇文档" class="headerlink" title="2、新建一篇文档"></a>2、新建一篇文档</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo new 文章名称<br></code></pre></td></tr></table></figure><h4 id="3、编辑文章"><a href="#3、编辑文章" class="headerlink" title="3、编辑文章"></a>3、编辑文章</h4><h4 id="4、发布"><a href="#4、发布" class="headerlink" title="4、发布"></a>4、发布</h4><p>hexo三连</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo clean<br>hexo g<br>hexo d<br></code></pre></td></tr></table></figure><h4 id="5、不出意外一会就可以访问到新文章了"><a href="#5、不出意外一会就可以访问到新文章了" class="headerlink" title="5、不出意外一会就可以访问到新文章了"></a>5、不出意外一会就可以访问到新文章了</h4>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>hexo</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Ubuntu系统网卡异常</title>
+    <link href="/2021/06/03/23455/"/>
+    <url>/2021/06/03/23455/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Ubuntu系统网卡异常"><a href="#Ubuntu系统网卡异常" class="headerlink" title="Ubuntu系统网卡异常"></a>Ubuntu系统网卡异常</h1><h2 id="问题现象"><a href="#问题现象" class="headerlink" title="问题现象"></a>问题现象</h2><p>ifconfig 查看没有获取到IP。</p><p>启动网络服务报错此服务找不到</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">abuntu@VM-32-2-ubuntu:sudo service network restart<br>Eailed to restart network.service:Unit network.service not found<br></code></pre></td></tr></table></figure><h2 id="排查过程"><a href="#排查过程" class="headerlink" title="排查过程"></a>排查过程</h2><p>1、执行dhclient命令获取到了IP了，网络也通了，以为问题解决了</p><p>但是重启机器后依然是获取不到IP的状态；</p><p>2、网上看了下Ubuntu 20是 <strong>netplan</strong> 工具管理的网络，在机器上面执行了下，发现没有这个命令；</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">bash: netplan:command not found<br></code></pre></td></tr></table></figure><p>3、执行如下命令安装一下这个命令</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo apt-get install netplan.io<br></code></pre></td></tr></table></figure><p>4、设置 systemd-networkd 服务开机自启。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo systemctl enable systemd-networkd.service<br></code></pre></td></tr></table></figure><p>5、重启服务器网络正常启动。</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>ubuntu</tag>
+      
+    </tags>
     
   </entry>
   
