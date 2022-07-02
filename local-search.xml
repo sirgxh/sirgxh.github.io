@@ -4,25 +4,6 @@
   
   
   <entry>
-    <title>Hexo使用文档</title>
-    <link href="/2022/06/03/1/"/>
-    <url>/2022/06/03/1/</url>
-    
-    <content type="html"><![CDATA[<h3 id="添加文章"><a href="#添加文章" class="headerlink" title="添加文章"></a>添加文章</h3><h4 id="1、在本地博客根目录鼠标右击点击【Git-bash-here】"><a href="#1、在本地博客根目录鼠标右击点击【Git-bash-here】" class="headerlink" title="1、在本地博客根目录鼠标右击点击【Git bash here】"></a>1、在本地博客根目录鼠标右击点击【Git bash here】</h4><h4 id="2、新建一篇文档"><a href="#2、新建一篇文档" class="headerlink" title="2、新建一篇文档"></a>2、新建一篇文档</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo new 文章名称<br></code></pre></td></tr></table></figure><h4 id="3、编辑文章"><a href="#3、编辑文章" class="headerlink" title="3、编辑文章"></a>3、编辑文章</h4><h4 id="4、发布"><a href="#4、发布" class="headerlink" title="4、发布"></a>4、发布</h4><p>hexo三连</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo clean<br>hexo g<br>hexo d<br></code></pre></td></tr></table></figure><h4 id="5、不出意外一会就可以访问到新文章了"><a href="#5、不出意外一会就可以访问到新文章了" class="headerlink" title="5、不出意外一会就可以访问到新文章了"></a>5、不出意外一会就可以访问到新文章了</h4>]]></content>
-    
-    
-    
-    <tags>
-      
-      <tag>hexo</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>Ubuntu系统网卡异常</title>
     <link href="/2022/06/03/23455/"/>
     <url>/2022/06/03/23455/</url>
@@ -42,6 +23,25 @@
   
   
   <entry>
+    <title>Hexo使用文档</title>
+    <link href="/2022/06/03/1/"/>
+    <url>/2022/06/03/1/</url>
+    
+    <content type="html"><![CDATA[<h3 id="添加文章"><a href="#添加文章" class="headerlink" title="添加文章"></a>添加文章</h3><h4 id="1、在本地博客根目录鼠标右击点击【Git-bash-here】"><a href="#1、在本地博客根目录鼠标右击点击【Git-bash-here】" class="headerlink" title="1、在本地博客根目录鼠标右击点击【Git bash here】"></a>1、在本地博客根目录鼠标右击点击【Git bash here】</h4><h4 id="2、新建一篇文档"><a href="#2、新建一篇文档" class="headerlink" title="2、新建一篇文档"></a>2、新建一篇文档</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo new 文章名称<br></code></pre></td></tr></table></figure><h4 id="3、编辑文章"><a href="#3、编辑文章" class="headerlink" title="3、编辑文章"></a>3、编辑文章</h4><h4 id="4、发布"><a href="#4、发布" class="headerlink" title="4、发布"></a>4、发布</h4><p>hexo三连</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo clean<br>hexo g<br>hexo d<br></code></pre></td></tr></table></figure><h4 id="5、不出意外一会就可以访问到新文章了"><a href="#5、不出意外一会就可以访问到新文章了" class="headerlink" title="5、不出意外一会就可以访问到新文章了"></a>5、不出意外一会就可以访问到新文章了</h4>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>hexo</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Linux系统开启启动报错：/dev/vda1 contains a file system with errors, check forced.</title>
     <link href="/2022/06/03/53264/"/>
     <url>/2022/06/03/53264/</url>
@@ -53,6 +53,29 @@
     <tags>
       
       <tag>Linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>df 和 du 命令显示不一致？</title>
+    <link href="/2022/06/03/52536/"/>
+    <url>/2022/06/03/52536/</url>
+    
+    <content type="html"><![CDATA[<h2 id="常见原因"><a href="#常见原因" class="headerlink" title="常见原因"></a>常见原因</h2><h4 id="1、有程序打开了文件，此文件被删除，但是程序没关闭，此文件所占用空间未释放。通过lsof命令可确认此情况"><a href="#1、有程序打开了文件，此文件被删除，但是程序没关闭，此文件所占用空间未释放。通过lsof命令可确认此情况" class="headerlink" title="1、有程序打开了文件，此文件被删除，但是程序没关闭，此文件所占用空间未释放。通过lsof命令可确认此情况"></a>1、有程序打开了文件，此文件被删除，但是程序没关闭，此文件所占用空间未释放。通过lsof命令可确认此情况</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">lsof  | grep -i delete<br></code></pre></td></tr></table></figure><h4 id="2、挂载点下有子目录被再次挂在到别处，这种情况下会隐藏原目录内容。"><a href="#2、挂载点下有子目录被再次挂在到别处，这种情况下会隐藏原目录内容。" class="headerlink" title="2、挂载点下有子目录被再次挂在到别处，这种情况下会隐藏原目录内容。"></a>2、挂载点下有子目录被再次挂在到别处，这种情况下会隐藏原目录内容。</h4><ul><li>什么是有嵌套挂载？</li></ul><p>系统盘目录是挂在到根目录&#x2F;的，但是数据盘是挂在到根目录下的&#x2F;data目录，这时就是嵌套挂载。</p><ul><li>举例说明</li></ul><p>例如&#x2F;data目录原来有5G数据，但是此时将 数据盘vdb挂在到&#x2F;data目录，此时du统计不到原&#x2F;data目录的5G数据。</p><p>这时我们想要在不卸载数据盘的情况下确认根目录下的data目录原本是否有数据，则需要bind挂载它的上层目录&#x2F;：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">mkdir -p /new; mount -o bind / /new ; du -sh /new ; umount /new<br></code></pre></td></tr></table></figure><h4 id="3、对于共享文件系统，可能会被其他服务器挂载了，请检查另外的服务器是否存在以上1和2-的场景"><a href="#3、对于共享文件系统，可能会被其他服务器挂载了，请检查另外的服务器是否存在以上1和2-的场景" class="headerlink" title="3、对于共享文件系统，可能会被其他服务器挂载了，请检查另外的服务器是否存在以上1和2 的场景"></a>3、对于共享文件系统，可能会被其他服务器挂载了，请检查另外的服务器是否存在以上1和2 的场景</h4><h4 id="4、xfs文件系统异常"><a href="#4、xfs文件系统异常" class="headerlink" title="4、xfs文件系统异常"></a>4、xfs文件系统异常</h4><p>如果是xfs文件系统，已排除上诉3种情况，重启机器后，空间还未释放，可以检测下&#x2F;var&#x2F;log&#x2F;messages日志文件是否有文件系统相关报错，在确保数据已备份的情况下，使用 xfs_repair 命令修复。</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+      <tag>Mac</tag>
+      
+      <tag>Windows</tag>
       
     </tags>
     
@@ -85,29 +108,6 @@
     <url>/2022/06/03/63475/</url>
     
     <content type="html"><![CDATA[<h2 id="什么是AES-NI？"><a href="#什么是AES-NI？" class="headerlink" title="什么是AES-NI？"></a>什么是AES-NI？</h2><p>高级加密标准指令集（或称英特尔高级加密标准新指令，简称AES-NI）是一个x86指令集架构的扩展，用于Intel和AMD微处理器，由Intel在2008年3月提出。该指令集的目的是改进应用程序使用高级加密标准（AES）执行加密和解密的速度。</p><p>详细介绍可参考<a href="https://zh.wikipedia.org/wiki/AES%25E6%258C%2587%25E4%25BB%25A4%25E9%259B%2586">链接</a></p><h2 id="Windows系统"><a href="#Windows系统" class="headerlink" title="Windows系统"></a>Windows系统</h2><p>Windows服务器借助第三方工具，我这里使用的是 CPU-Z，<a href="http://www.cpuid.com/cpuz.php">点击下载</a></p><p>此处下载、安装步骤省略，直接查看结果，如图：</p><p><img src="/img/slwy6m64xw.png"></p><h2 id="Linux系统"><a href="#Linux系统" class="headerlink" title="Linux系统"></a>Linux系统</h2><p>使用命令【grep aes &#x2F;proc&#x2F;cpuinfo】即可查看，当此命令能返回内容，说明此服务器的处理器是支持AES-NI的</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@VM-80-27-centos ~]# grep aes /proc/cpuinfo<br>flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl eagerfpu pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single fsgsbase bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx avx512f avx512dq rdseed adx smap clflushopt clwb avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 arat avx512_vnni<br>flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl eagerfpu pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single fsgsbase bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx avx512f avx512dq rdseed adx smap clflushopt clwb avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 arat avx512_vnni<br>[root@VM-80-27-centos ~]# <br></code></pre></td></tr></table></figure><h2 id="Mac系统"><a href="#Mac系统" class="headerlink" title="Mac系统"></a>Mac系统</h2><p>使用命令【sysctl -n machdep.cpu | grep -i aes】即可查看，当此命令能返回内容，说明此服务器的处理器是支持AES-NI的。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">xxx-MB0:~ x$ sysctl -n machdep.cpu | grep -i aes<br>FPU VME DE PSE TSC MSR PAE MCE CX8 APIC SEP MTRR PGE MCA CMOV PAT PSE36 CLFSH DS ACPI MMX FXSR SSE SSE2 SS HTT TM PBE SSE3 PCLMULQDQ DTES64 MON DSCPL VMX SMX EST TM2 SSSE3 FMA CX16 TPR PDCM SSE4.1 SSE4.2 x2APIC MOVBE POPCNT AES PCID XSAVE OSXSAVE SEGLIM64 TSCTMR AVX1.0 RDRAND F16C<br></code></pre></td></tr></table></figure>]]></content>
-    
-    
-    
-    <tags>
-      
-      <tag>Linux</tag>
-      
-      <tag>Mac</tag>
-      
-      <tag>Windows</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>df 和 du 命令显示不一致？</title>
-    <link href="/2022/06/03/%E6%A8%A1%E6%9D%BF/"/>
-    <url>/2022/06/03/%E6%A8%A1%E6%9D%BF/</url>
-    
-    <content type="html"><![CDATA[<h2 id="常见原因"><a href="#常见原因" class="headerlink" title="常见原因"></a>常见原因</h2><h4 id="1、有程序打开了文件，此文件被删除，但是程序没关闭，此文件所占用空间未释放。通过lsof命令可确认此情况"><a href="#1、有程序打开了文件，此文件被删除，但是程序没关闭，此文件所占用空间未释放。通过lsof命令可确认此情况" class="headerlink" title="1、有程序打开了文件，此文件被删除，但是程序没关闭，此文件所占用空间未释放。通过lsof命令可确认此情况"></a>1、有程序打开了文件，此文件被删除，但是程序没关闭，此文件所占用空间未释放。通过lsof命令可确认此情况</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">lsof  | grep -i delete<br></code></pre></td></tr></table></figure><h4 id="2、挂载点下有子目录被再次挂在到别处，这种情况下会隐藏原目录内容。"><a href="#2、挂载点下有子目录被再次挂在到别处，这种情况下会隐藏原目录内容。" class="headerlink" title="2、挂载点下有子目录被再次挂在到别处，这种情况下会隐藏原目录内容。"></a>2、挂载点下有子目录被再次挂在到别处，这种情况下会隐藏原目录内容。</h4><ul><li>什么是有嵌套挂载？</li></ul><p>系统盘目录是挂在到根目录&#x2F;的，但是数据盘是挂在到根目录下的&#x2F;data目录，这时就是嵌套挂载。</p><ul><li>举例说明</li></ul><p>例如&#x2F;data目录原来有5G数据，但是此时将 数据盘vdb挂在到&#x2F;data目录，此时du统计不到原&#x2F;data目录的5G数据。</p><p>这时我们想要在不卸载数据盘的情况下确认根目录下的data目录原本是否有数据，则需要bind挂载它的上层目录&#x2F;：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">mkdir -p /new; mount -o bind / /new ; du -sh /new ; umount /new<br></code></pre></td></tr></table></figure><h4 id="3、对于共享文件系统，可能会被其他服务器挂载了，请检查另外的服务器是否存在以上1和2-的场景"><a href="#3、对于共享文件系统，可能会被其他服务器挂载了，请检查另外的服务器是否存在以上1和2-的场景" class="headerlink" title="3、对于共享文件系统，可能会被其他服务器挂载了，请检查另外的服务器是否存在以上1和2 的场景"></a>3、对于共享文件系统，可能会被其他服务器挂载了，请检查另外的服务器是否存在以上1和2 的场景</h4><h4 id="4、xfs文件系统异常"><a href="#4、xfs文件系统异常" class="headerlink" title="4、xfs文件系统异常"></a>4、xfs文件系统异常</h4><p>如果是xfs文件系统，已排除上诉3种情况，重启机器后，空间还未释放，可以检测下&#x2F;var&#x2F;log&#x2F;messages日志文件是否有文件系统相关报错，在确保数据已备份的情况下，使用 xfs_repair 命令修复。</p>]]></content>
     
     
     
