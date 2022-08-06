@@ -25,6 +25,27 @@
   
   
   <entry>
+    <title>ntpq命令报错 127.0.0.1：time out,nothing received</title>
+    <link href="/2022/06/05/%E6%A8%A1%E6%9D%BF/"/>
+    <url>/2022/06/05/%E6%A8%A1%E6%9D%BF/</url>
+    
+    <content type="html"><![CDATA[<h2 id="ntpq命令报错-127-0-0-1：time-out-nothing-received"><a href="#ntpq命令报错-127-0-0-1：time-out-nothing-received" class="headerlink" title="ntpq命令报错 127.0.0.1：time out,nothing received"></a>ntpq命令报错 127.0.0.1：time out,nothing received</h2><p><img src="C:\Users\gxh\AppData\Local\Temp{49B0FF38-1ED7-43FE-BA47-30D2DBD522FE}\截屏2022-08-06%2023.41.16.png" alt="截屏2022-08-06 23.41.16.png"></p><h2 id="检查iptables防火墙规则"><a href="#检查iptables防火墙规则" class="headerlink" title="检查iptables防火墙规则"></a>检查iptables防火墙规则</h2><p>将如下规则清除后可恢复正常。</p><p><img src="C:\Users\gxh\AppData\Local\Temp{052CD749-7FA8-465C-93CC-A85EC723BBB2}\截屏2022-08-06%2023.42.29.png" alt="截屏2022-08-06 23.42.29.png"></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+      <tag>ntp</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Linux系统开启启动报错：/dev/vda1 contains a file system with errors, check forced.</title>
     <link href="/2022/06/03/53264/"/>
     <url>/2022/06/03/53264/</url>
