@@ -50,7 +50,7 @@
     <link href="/2022/06/06/24523/"/>
     <url>/2022/06/06/24523/</url>
     
-    <content type="html"><![CDATA[<h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>Centos系统使用passwd命令修改密码报错 Authentication token manipulation error</p><p><img src="C:\Users\gxh\AppData\Local\Temp{6DAE94C4-1830-43F1-942A-0600D4861970}\截屏2022-08-07%2000.08.25.png" alt="截屏2022-08-07 00.08.25.png"></p><h1 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h1><p>文件 &#x2F;etc&#x2F;pam.d&#x2F;system-auth （从system-auth-ac 软链接过来的）内容有所变动，</p><h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>从正常机器拷贝一个同名文件过来做替换，问题恢复。</p><h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p> <a href="https://access.redhat.com/solutions/21693">https://access.redhat.com/solutions/21693</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>Centos系统使用passwd命令修改密码报错 Authentication token manipulation error</p><p><img src="C:\Hexo\source\img\passwd.png" alt="截屏2022-08-07 00.08.25.png"></p><h1 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h1><p>文件 &#x2F;etc&#x2F;pam.d&#x2F;system-auth （从system-auth-ac 软链接过来的）内容有所变动，</p><h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>从正常机器拷贝一个同名文件过来做替换，问题恢复。</p><h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p> <a href="https://access.redhat.com/solutions/21693">https://access.redhat.com/solutions/21693</a></p>]]></content>
     
     
     
@@ -69,7 +69,7 @@
     <link href="/2022/06/05/62446/"/>
     <url>/2022/06/05/62446/</url>
     
-    <content type="html"><![CDATA[<h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>ntpq命令报错 127.0.0.1：time out,nothing received</p><p><img src="C:\Users\gxh\AppData\Local\Temp{49B0FF38-1ED7-43FE-BA47-30D2DBD522FE}\截屏2022-08-06%2023.41.16.png" alt="截屏2022-08-06 23.41.16.png"></p><h2 id=""><a href="#" class="headerlink" title=""></a></h2><h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>检查iptables防火墙规则，将如下规则清除后可恢复正常。</p><p><img src="C:\Users\gxh\AppData\Local\Temp{052CD749-7FA8-465C-93CC-A85EC723BBB2}\截屏2022-08-06%2023.42.29.png" alt="截屏2022-08-06 23.42.29.png"></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>ntpq命令报错 127.0.0.1：time out,nothing received</p><p><img src="C:\Hexo\source\img\ntpq1.png" alt="截屏2022-08-06 23.41.16.png"></p><h2 id=""><a href="#" class="headerlink" title=""></a></h2><h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>检查iptables防火墙规则，将如下规则清除后可恢复正常。</p><p><img src="C:\Hexo\source\img\ntpq2.png" alt="截屏2022-08-06 23.42.29.png"></p>]]></content>
     
     
     
