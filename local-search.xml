@@ -5,8 +5,8 @@
   
   <entry>
     <title>Redhat 开发者账号订阅到期</title>
-    <link href="/2022/08/06/%E6%A8%A1%E6%9D%BF/"/>
-    <url>/2022/08/06/%E6%A8%A1%E6%9D%BF/</url>
+    <link href="/2022/08/06/63456/"/>
+    <url>/2022/08/06/63456/</url>
     
     <content type="html"><![CDATA[<h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>打开文章<strong><a href="https://access.redhat.com/solutions/21693">https://access.redhat.com/solutions/21693</a></strong> 无法全部查看</p><p>提示如下</p><p>SUBSCRIBER EXCLUSIVE CONTENT</p><p>An active Red Hat subscription is required to participate.</p><p>如下图</p><p><img src="/img/redhat2.png"></p><p><img src="/img/redhat.png"></p><h1 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h1><p>redhat开发者账号是需要订阅的，每次订阅为一年，到期后，文章就无法完整查看了。</p><h1 id="如何续订？"><a href="#如何续订？" class="headerlink" title="如何续订？"></a>如何续订？</h1><p>授权过期时，点击 <a href="https://developers.redhat.com/">此处</a> 右上角 登录并同意协议即可续订。</p><p>半个小时后差不多就可以打开了，或者明天再看看。</p>]]></content>
     
@@ -88,7 +88,7 @@
     <link href="/2022/06/05/62446/"/>
     <url>/2022/06/05/62446/</url>
     
-    <content type="html"><![CDATA[<h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>ntpq命令报错 127.0.0.1：time out,nothing received</p><p><img src="/%5Cimg%5Cntpq1.png" alt="报错截图"> </p><h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>检查iptables防火墙规则，将如下规则清除后可恢复正常。</p><p><img src="/img/ntpq2.png"></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>ntpq命令报错 127.0.0.1：time out,nothing received</p><p><img src="/img/ntpq1.png" alt="报错截图"> </p><h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>检查iptables防火墙规则，将如下规则清除后可恢复正常。</p><p><img src="/img/ntpq2.png"></p>]]></content>
     
     
     
