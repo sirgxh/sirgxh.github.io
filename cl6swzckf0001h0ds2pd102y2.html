@@ -16,25 +16,24 @@
   <meta name="author" content="Guoxh">
   <meta name="keywords" content="">
   
-    <meta name="description" content="1、安装包1yum install libreoffice -y  2、命令转换word to pdf12[root@VM-80-27-centos ~]# libreoffice --headless --convert-to pdf &#x2F;data&#x2F;demo.docx --outdir &#x2F;data&#x2F;a&#x2F;  convert &#x2F;data&#x2F;demo.docx -&gt; &#x2F;data&#x2F;a&#x2F;&#x2F;demo.pd">
+    <meta name="description" content="Ubuntu系统网卡异常问题现象ifconfig 查看没有获取到IP。 启动网络服务报错此服务找不到 12abuntu@VM-32-2-ubuntu:sudo service network restartEailed to restart network.service:Unit network.service not found  排查过程1、执行dhclient命令获取到了IP了，网络也通了">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux系统python3使用libreoffice将word转换为pdf文件">
-<meta property="og:url" content="http://92cloud.cn/2022/07/03/66346/index.html">
+<meta property="og:title" content="Ubuntu系统网卡异常">
+<meta property="og:url" content="http://92cloud.cn/cl6swzckf0001h0ds2pd102y2.html">
 <meta property="og:site_name" content="Guoxh &#39;s blog">
-<meta property="og:description" content="1、安装包1yum install libreoffice -y  2、命令转换word to pdf12[root@VM-80-27-centos ~]# libreoffice --headless --convert-to pdf &#x2F;data&#x2F;demo.docx --outdir &#x2F;data&#x2F;a&#x2F;  convert &#x2F;data&#x2F;demo.docx -&gt; &#x2F;data&#x2F;a&#x2F;&#x2F;demo.pd">
+<meta property="og:description" content="Ubuntu系统网卡异常问题现象ifconfig 查看没有获取到IP。 启动网络服务报错此服务找不到 12abuntu@VM-32-2-ubuntu:sudo service network restartEailed to restart network.service:Unit network.service not found  排查过程1、执行dhclient命令获取到了IP了，网络也通了">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-07-03T11:30:21.000Z">
-<meta property="article:modified_time" content="2022-08-07T09:07:58.785Z">
+<meta property="article:published_time" content="2021-06-03T03:31:00.000Z">
+<meta property="article:modified_time" content="2022-07-02T12:28:15.881Z">
 <meta property="article:author" content="Guoxh">
-<meta property="article:tag" content="Linux">
-<meta property="article:tag" content="python">
+<meta property="article:tag" content="ubuntu">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Linux系统python3使用libreoffice将word转换为pdf文件 - Guoxh &#39;s blog</title>
+  <title>Ubuntu系统网卡异常 - Guoxh &#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -196,7 +195,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Linux系统python3使用libreoffice将word转换为pdf文件"></span>
+            <span id="subtitle" data-typed-text="Ubuntu系统网卡异常"></span>
           
         </div>
 
@@ -207,8 +206,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-07-03 19:30" pubdate>
-          2022年7月3日 晚上
+        <time datetime="2021-06-03 11:31" pubdate>
+          2021年6月3日 中午
         </time>
       </span>
     
@@ -219,7 +218,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.1k 字
+          423 字
         
       </span>
     
@@ -230,7 +229,7 @@
         
         
         
-          9 分钟
+          4 分钟
         
       </span>
     
@@ -268,20 +267,26 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Linux系统python3使用libreoffice将word转换为pdf文件</h1>
+            <h1 style="display: none">Ubuntu系统网卡异常</h1>
             
             <div class="markdown-body">
               
-              <h3 id="1、安装包"><a href="#1、安装包" class="headerlink" title="1、安装包"></a>1、安装包</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">yum install libreoffice -y<br></code></pre></td></tr></table></figure>
+              <h1 id="Ubuntu系统网卡异常"><a href="#Ubuntu系统网卡异常" class="headerlink" title="Ubuntu系统网卡异常"></a>Ubuntu系统网卡异常</h1><h2 id="问题现象"><a href="#问题现象" class="headerlink" title="问题现象"></a>问题现象</h2><p>ifconfig 查看没有获取到IP。</p>
+<p>启动网络服务报错此服务找不到</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">abuntu@VM-32-2-ubuntu:sudo service network restart<br>Eailed to restart network.service:Unit network.service not found<br></code></pre></td></tr></table></figure>
 
-<h3 id="2、命令转换word-to-pdf"><a href="#2、命令转换word-to-pdf" class="headerlink" title="2、命令转换word to pdf"></a>2、命令转换word to pdf</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@VM-80-27-centos ~]# libreoffice --headless --convert-to pdf /data/demo.docx --outdir /data/a/  <br>convert /data/demo.docx -&gt; /data/a//demo.pdf using filter : writer_pdf_Export<br></code></pre></td></tr></table></figure>
+<h2 id="排查过程"><a href="#排查过程" class="headerlink" title="排查过程"></a>排查过程</h2><p>1、执行dhclient命令获取到了IP了，网络也通了，以为问题解决了</p>
+<p>但是重启机器后依然是获取不到IP的状态；</p>
+<p>2、网上看了下Ubuntu 20是 <strong>netplan</strong> 工具管理的网络，在机器上面执行了下，发现没有这个命令；</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">bash: netplan:command not found<br></code></pre></td></tr></table></figure>
 
-<ul>
-<li>格式：</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">libreoffice --headless --convert-to pdf docx文件路径  --outdir 输出的文件路径<br></code></pre></td></tr></table></figure>
+<p>3、执行如下命令安装一下这个命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo apt-get install netplan.io<br></code></pre></td></tr></table></figure>
 
-<h3 id="3、python脚本讲word转换为pdf（Linux系统）"><a href="#3、python脚本讲word转换为pdf（Linux系统）" class="headerlink" title="3、python脚本讲word转换为pdf（Linux系统）"></a>3、python脚本讲word转换为pdf（Linux系统）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># -*- coding: utf-8 -*-</span><br><span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">linux system word to pdf</span><br><span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-keyword">import</span> subprocess<br><span class="hljs-keyword">def</span> <span class="hljs-title function_">doc2pdf_linux</span>(<span class="hljs-params">docPath, pdfPath</span>):<br>    <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">    convert a doc/docx document to pdf format (linux only, requires libreoffice)</span><br><span class="hljs-string">    :param doc: path to document</span><br><span class="hljs-string">    &quot;&quot;&quot;</span><br>    <span class="hljs-comment"># 转换word to pdf主要命令</span><br>    cmd = <span class="hljs-string">&#x27;libreoffice --headless --convert-to pdf&#x27;</span>.split() + [docPath] + [<span class="hljs-string">&#x27;--outdir&#x27;</span>] + [pdfPath]<br>    <span class="hljs-comment"># 开启一个进程执行这个转换命令</span><br>    p = subprocess.Popen(cmd, stderr=subprocess.PIPE, stdout=subprocess.PIPE)<br>    <span class="hljs-comment"># 设置30秒超时</span><br>    p.wait(timeout=<span class="hljs-number">30</span>)<br>    <span class="hljs-comment"># 将该命令的标准输出和错误输出赋值给两个变量名称</span><br>    stdout, stderr = p.communicate()<br>    <span class="hljs-comment"># 如果错误输出存在，则抛出异常</span><br>    <span class="hljs-keyword">if</span> stderr:<br>        <span class="hljs-keyword">raise</span> subprocess.SubprocessError(stderr)<br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    wordpath=<span class="hljs-string">&#x27;/data/demo.docx&#x27;</span><br>    pdfpath=<span class="hljs-string">&#x27;/data/test/&#x27;</span><br>    doc2pdf_linux(wordpath,pdfpath)<br></code></pre></td></tr></table></figure>
+<p>4、设置 systemd-networkd 服务开机自启。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo systemctl enable systemd-networkd.service<br></code></pre></td></tr></table></figure>
+
+<p>5、重启服务器网络正常启动。</p>
 
               
             </div>
@@ -293,9 +298,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Linux/">#Linux</a>
-      
-        <a href="/tags/python/">#python</a>
+        <a href="/tags/ubuntu/">#ubuntu</a>
       
     </div>
   
@@ -307,8 +310,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Linux系统python3使用libreoffice将word转换为pdf文件</div>
-      <div>http://92cloud.cn/2022/07/03/66346/</div>
+      <div>Ubuntu系统网卡异常</div>
+      <div>http://92cloud.cn/cl6swzckf0001h0ds2pd102y2.html</div>
     </div>
     <div class="license-meta">
       
@@ -320,7 +323,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年7月3日</div>
+          <div>2021年6月3日</div>
         </div>
       
       
@@ -350,21 +353,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/08/06/63456/" title="Redhat 开发者账号订阅到期">
+                      <a href="/cl6swzckp0003h0dsbwm444e0.html" title="Hexo使用文档">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Redhat 开发者账号订阅到期</span>
+                        <span class="hidden-mobile">Hexo使用文档</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
                   </article>
                   <article class="post-next col-6">
                     
-                    
-                      <a href="/2022/06/07/23525/" title="Linux系统nslookup域名解析正常但是ping不通">
-                        <span class="hidden-mobile">Linux系统nslookup域名解析正常但是ping不通</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
                     
                   </article>
                 </div>

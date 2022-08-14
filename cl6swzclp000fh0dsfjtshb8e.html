@@ -16,27 +16,27 @@
   <meta name="author" content="Guoxh">
   <meta name="keywords" content="">
   
-    <meta name="description" content="问题描述nslookup 解析baidu域名可以正常解析，但是ping baidu.com 失败 报错如下  排查过程1、使用strace命令追踪查看系统调用过程，发现open &#x2F;etc目录下的大量文件报错权限不足 1234567891011121314151617181920212223242526272829303132333435[root@VM-80-27-centos ~]#">
+    <meta name="description" content="问题描述使用云服务器，远程无法登录，通过控制台vnc登录后看到这样的报错，如下： Checking filesystems &#x2F;dev&#x2F;vda1 contains a file system with errors, check forced. &#x2F;dev&#x2F;vda1: Inodes that were part of a corrupted orphan lin">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux系统nslookup域名解析正常但是ping不通">
-<meta property="og:url" content="http://92cloud.cn/2022/06/07/23525/index.html">
+<meta property="og:title" content="Linux系统开启启动报错：&#x2F;dev&#x2F;vda1 contains a file system with errors, check forced.">
+<meta property="og:url" content="http://92cloud.cn/cl6swzclp000fh0dsfjtshb8e.html">
 <meta property="og:site_name" content="Guoxh &#39;s blog">
-<meta property="og:description" content="问题描述nslookup 解析baidu域名可以正常解析，但是ping baidu.com 失败 报错如下  排查过程1、使用strace命令追踪查看系统调用过程，发现open &#x2F;etc目录下的大量文件报错权限不足 1234567891011121314151617181920212223242526272829303132333435[root@VM-80-27-centos ~]#">
+<meta property="og:description" content="问题描述使用云服务器，远程无法登录，通过控制台vnc登录后看到这样的报错，如下： Checking filesystems &#x2F;dev&#x2F;vda1 contains a file system with errors, check forced. &#x2F;dev&#x2F;vda1: Inodes that were part of a corrupted orphan lin">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://92cloud.cn/img/ping.png">
-<meta property="article:published_time" content="2022-06-07T03:11:00.000Z">
-<meta property="article:modified_time" content="2022-08-07T09:06:21.539Z">
+<meta property="og:image" content="http://92cloud.cn/img/byriareeso.png">
+<meta property="og:image" content="http://92cloud.cn/img/fjkmayksqx.png">
+<meta property="article:published_time" content="2022-06-03T12:31:24.000Z">
+<meta property="article:modified_time" content="2022-07-02T10:08:16.642Z">
 <meta property="article:author" content="Guoxh">
 <meta property="article:tag" content="Linux">
-<meta property="article:tag" content="strace">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://92cloud.cn/img/ping.png">
+<meta name="twitter:image" content="http://92cloud.cn/img/byriareeso.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Linux系统nslookup域名解析正常但是ping不通 - Guoxh &#39;s blog</title>
+  <title>Linux系统开启启动报错：/dev/vda1 contains a file system with errors, check forced. - Guoxh &#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -198,7 +198,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Linux系统nslookup域名解析正常但是ping不通"></span>
+            <span id="subtitle" data-typed-text="Linux系统开启启动报错：/dev/vda1 contains a file system with errors, check forced."></span>
           
         </div>
 
@@ -209,8 +209,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-06-07 11:11" pubdate>
-          2022年6月7日 上午
+        <time datetime="2022-06-03 20:31" pubdate>
+          2022年6月3日 晚上
         </time>
       </span>
     
@@ -221,7 +221,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          4.3k 字
+          603 字
         
       </span>
     
@@ -232,7 +232,7 @@
         
         
         
-          36 分钟
+          6 分钟
         
       </span>
     
@@ -270,28 +270,30 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Linux系统nslookup域名解析正常但是ping不通</h1>
+            <h1 style="display: none">Linux系统开启启动报错：/dev/vda1 contains a file system with errors, check forced.</h1>
             
             <div class="markdown-body">
               
-              <h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>nslookup 解析baidu域名可以正常解析，但是ping baidu.com 失败</p>
-<p>报错如下</p>
-<p><img src="/img/ping.png" srcset="/img/loading.gif" lazyload alt="报错截图"></p>
-<h1 id="排查过程"><a href="#排查过程" class="headerlink" title="排查过程"></a>排查过程</h1><p>1、使用strace命令追踪查看系统调用过程，发现open &#x2F;etc目录下的大量文件报错权限不足</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@VM-80-27-centos ~]# strace -o /tmp/pingstrace.txt -tttT -s 1000 ping baidu.com<br>ping: baidu.com: 域名解析暂时失败<br>[root@VM-80-27-centos ~]# <br>[root@VM-80-27-centos ~]# grep open /tmp/pingstrace.txt <br>1659803039.797457 open(&quot;/etc/ld.so.preload&quot;, O_RDONLY|O_CLOEXEC) = 3 &lt;0.000010&gt;<br>1659803039.797816 open(&quot;/lib64/libonion.so&quot;, O_RDONLY|O_CLOEXEC) = 3 &lt;0.000023&gt;<br>1659803039.798298 open(&quot;/etc/ld.so.cache&quot;, O_RDONLY|O_CLOEXEC) = 3 &lt;0.000020&gt;<br>1659803039.798506 open(&quot;/lib64/libcap.so.2&quot;, O_RDONLY|O_CLOEXEC) = 3 &lt;0.000021&gt;<br>1659803039.798907 open(&quot;/lib64/libidn.so.11&quot;, O_RDONLY|O_CLOEXEC) = 3 &lt;0.000022&gt;<br>1659803039.799334 open(&quot;/lib64/libcrypto.so.10&quot;, O_RDONLY|O_CLOEXEC) = 3 &lt;0.000022&gt;<br>1659803039.799789 open(&quot;/lib64/libresolv.so.2&quot;, O_RDONLY|O_CLOEXEC) = 3 &lt;0.000023&gt;<br>1659803039.800226 open(&quot;/lib64/libm.so.6&quot;, O_RDONLY|O_CLOEXEC) = 3 &lt;0.000022&gt;<br>1659803039.800664 open(&quot;/lib64/libc.so.6&quot;, O_RDONLY|O_CLOEXEC) = 3 &lt;0.000021&gt;<br>1659803039.801120 open(&quot;/lib64/libdl.so.2&quot;, O_RDONLY|O_CLOEXEC) = 3 &lt;0.000021&gt;<br>1659803039.801494 open(&quot;/lib64/libattr.so.1&quot;, O_RDONLY|O_CLOEXEC) = 3 &lt;0.000021&gt;<br>1659803039.801959 open(&quot;/lib64/libz.so.1&quot;, O_RDONLY|O_CLOEXEC) = 3 &lt;0.000021&gt;<br>1659803039.804175 open(&quot;/etc/pki/tls/legacy-settings&quot;, O_RDONLY) = -1 ENOENT (没有那个文件或目录) &lt;0.000021&gt;<br>1659803039.804847 open(&quot;/usr/lib/locale/locale-archive&quot;, O_RDONLY|O_CLOEXEC) = 3 &lt;0.000022&gt;<br>1659803039.805883 open(&quot;/etc/nsswitch.conf&quot;, O_RDONLY|O_CLOEXEC) = -1 EACCES (权限不够) &lt;0.000019&gt;<br>1659803039.806002 open(&quot;/etc/host.conf&quot;, O_RDONLY|O_CLOEXEC) = -1 EACCES (权限不够) &lt;0.000020&gt;<br>1659803039.806054 open(&quot;/etc/resolv.conf&quot;, O_RDONLY|O_CLOEXEC) = -1 EACCES (权限不够) &lt;0.000019&gt;<br>1659803039.806169 open(&quot;/etc/ld.so.cache&quot;, O_RDONLY|O_CLOEXEC) = -1 EACCES (权限不够) &lt;0.000019&gt;<br>1659803039.806221 open(&quot;/lib64/tls/x86_64/libnss_dns.so.2&quot;, O_RDONLY|O_CLOEXEC) = -1 ENOENT (没有那个文件或目录) &lt;0.000021&gt;<br>1659803039.806324 open(&quot;/lib64/tls/libnss_dns.so.2&quot;, O_RDONLY|O_CLOEXEC) = -1 ENOENT (没有那个文件或目录) &lt;0.000020&gt;<br>1659803039.806429 open(&quot;/lib64/x86_64/libnss_dns.so.2&quot;, O_RDONLY|O_CLOEXEC) = -1 ENOENT (没有那个文件或目录) &lt;0.000020&gt;<br>1659803039.806536 open(&quot;/lib64/libnss_dns.so.2&quot;, O_RDONLY|O_CLOEXEC) = 4 &lt;0.000021&gt;<br>1659803039.807975 open(&quot;/lib64/tls/libnss_files.so.2&quot;, O_RDONLY|O_CLOEXEC) = -1 ENOENT (没有那个文件或目录) &lt;0.000023&gt;<br>1659803039.808038 open(&quot;/lib64/libnss_files.so.2&quot;, O_RDONLY|O_CLOEXEC) = 4 &lt;0.000023&gt;<br>1659803039.808654 open(&quot;/etc/hosts&quot;, O_RDONLY|O_CLOEXEC) = -1 EACCES (权限不够) &lt;0.000021&gt;<br>1659803039.808719 open(&quot;/usr/share/locale/locale.alias&quot;, O_RDONLY|O_CLOEXEC) = 4 &lt;0.000031&gt;<br>1659803039.809155 open(&quot;/usr/share/locale/zh_CN.UTF-8/LC_MESSAGES/libc.mo&quot;, O_RDONLY) = -1 ENOENT (没有那个文件或目录) &lt;0.000022&gt;<br>1659803039.809210 open(&quot;/usr/share/locale/zh_CN.utf8/LC_MESSAGES/libc.mo&quot;, O_RDONLY) = -1 ENOENT (没有那个文件或目录) &lt;0.000021&gt;<br>1659803039.809264 open(&quot;/usr/share/locale/zh_CN/LC_MESSAGES/libc.mo&quot;, O_RDONLY) = 4 &lt;0.000023&gt;<br>1659803039.809494 open(&quot;/usr/lib64/gconv/gconv-modules.cache&quot;, O_RDONLY) = 4 &lt;0.000023&gt;<br>[root@VM-80-27-centos ~]# <br></code></pre></td></tr></table></figure>
+              <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>使用云服务器，远程无法登录，通过控制台vnc登录后看到这样的报错，如下：</p>
+<p>Checking filesystems</p>
+<p>&#x2F;dev&#x2F;vda1 contains a file system with errors, check forced.</p>
+<p>&#x2F;dev&#x2F;vda1: Inodes that were part of a corrupted orphan linked list found.</p>
+<p>&#x2F;dev&#x2F;vda1: UNEXPECTED INCONSISTENCY: RUN fsck MANUALLY. </p>
+<p>(i.e., without -a or -p options)  FAILED</p>
+<p><img src="/img/byriareeso.png" srcset="/img/loading.gif" lazyload alt="报错截图"></p>
+<h2 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h2><p>一般是强制关机或服务器突然断电所致。</p>
+<h2 id="处理方案"><a href="#处理方案" class="headerlink" title="处理方案"></a>处理方案</h2><h4 id="1、做备份"><a href="#1、做备份" class="headerlink" title="1、做备份"></a>1、做备份</h4><p>首先要<a target="_blank" rel="noopener" href="https://cloud.tencent.com/document/product/362/5755?from=10680">创建快照</a>备份当前服务器状态，这样若修复过程中遇到问题或修复未果，我们则可以通过回滚快照恢复服务器到当前的状态。</p>
+<h4 id="2、登录服务器"><a href="#2、登录服务器" class="headerlink" title="2、登录服务器"></a>2、登录服务器</h4><p>当前服务器为故障状态，无法远程登录， 需要登录<a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/cvm/instance/index?rid=1">腾讯云控制台</a>，然后使用<a target="_blank" rel="noopener" href="https://cloud.tencent.com/document/product/213/35701?from=10680">VNC登录</a>服务器。</p>
+<h4 id="3、根据提示输入root密码"><a href="#3、根据提示输入root密码" class="headerlink" title="3、根据提示输入root密码"></a>3、根据提示输入root密码</h4><p><img src="/img/fjkmayksqx.png" srcset="/img/loading.gif" lazyload></p>
+<h4 id="4、卸载文件系统"><a href="#4、卸载文件系统" class="headerlink" title="4、卸载文件系统"></a>4、卸载文件系统</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">umount /dev/vda1<br></code></pre></td></tr></table></figure>
 
-<p>2、检查提示权限不足的这些文件，权限和正常服务器是正常的</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@VM-80-27-centos ~]# ll /etc/resolv.conf <br>-rw-r--r-- 1 root root 89 8月   5 23:38 /etc/resolv.conf<br>[root@VM-80-27-centos ~]# lsattr /etc/resolv.conf<br>-------------e-- /etc/resolv.conf<br>[root@VM-80-27-centos ~]# <br></code></pre></td></tr></table></figure>
+<h4 id="5、使用fsck命令进行修复"><a href="#5、使用fsck命令进行修复" class="headerlink" title="5、使用fsck命令进行修复"></a>5、使用fsck命令进行修复</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">fsck.ext3  -p /dev/vda1<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-comment"># 这里的ext3要根据自身文件系统类型选择，可通过 df -Th 命令查看。</span></span><br></code></pre></td></tr></table></figure>
 
-<p>3、检查selinux是否关闭</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@VM-80-27-centos ~]# getenforce <br>Disabled<br></code></pre></td></tr></table></figure>
+<p>若上面的命令修复无果，可使用下面的命令尝试修复。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">fsck.ext3 -y /dev/vda1<br></code></pre></td></tr></table></figure>
 
-<p>4、检查这些文件上层目录&#x2F;etc，发现缺少可执行权限</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@VM-80-27-centos ~]# ls -ld /etc<br>drw-r--r--. 99 root root 12288 8月   5 19:16 /etc<br></code></pre></td></tr></table></figure>
-
-<p>5、 手动添加可执行权限后恢复正常。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@VM-80-27-centos ~]# chmod 755 /etc<br>[root@VM-80-27-centos ~]# <br>[root@VM-80-27-centos ~]# ping baidu.com<br>PING baidu.com (110.242.68.66) 56(84) bytes of data.<br>64 bytes from 110.242.68.66 (110.242.68.66): icmp_seq=1 ttl=251 time=10.6 ms<br>64 bytes from 110.242.68.66 (110.242.68.66): icmp_seq=2 ttl=251 time=10.6 ms<br>64 bytes from 110.242.68.66 (110.242.68.66): icmp_seq=3 ttl=251 time=10.6 ms<br>^C<br>--- baidu.com ping statistics ---<br>3 packets transmitted, 3 received, 0% packet loss, time 2001ms<br>rtt min/avg/max/mdev = 10.605/10.614/10.625/0.008 ms<br>[root@VM-80-27-centos ~]# <br></code></pre></td></tr></table></figure>
-
+<p><strong>提示完成后，reboot重启服务器即可正常启动。</strong></p>
+<h1 id=""><a href="#" class="headerlink" title=""></a></h1>
               
             </div>
             <hr/>
@@ -304,8 +306,6 @@
       
         <a href="/tags/Linux/">#Linux</a>
       
-        <a href="/tags/strace/">#strace</a>
-      
     </div>
   
 </div>
@@ -316,8 +316,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Linux系统nslookup域名解析正常但是ping不通</div>
-      <div>http://92cloud.cn/2022/06/07/23525/</div>
+      <div>Linux系统开启启动报错：/dev/vda1 contains a file system with errors, check forced.</div>
+      <div>http://92cloud.cn/cl6swzclp000fh0dsfjtshb8e.html</div>
     </div>
     <div class="license-meta">
       
@@ -329,7 +329,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年6月7日</div>
+          <div>2022年6月3日</div>
         </div>
       
       
@@ -359,9 +359,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/07/03/66346/" title="Linux系统python3使用libreoffice将word转换为pdf文件">
+                      <a href="/cl6swzcmu000nh0dscycf7tko.html" title="ntpq命令报错 127.0.0.1：time out,nothing received">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Linux系统python3使用libreoffice将word转换为pdf文件</span>
+                        <span class="hidden-mobile">ntpq命令报错 127.0.0.1：time out,nothing received</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -369,8 +369,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/06/06/24523/" title="Centos系统使用passwd命令修改密码报错 Authentication token manipulation error">
-                        <span class="hidden-mobile">Centos系统使用passwd命令修改密码报错 Authentication token manipulation error</span>
+                      <a href="/cl6swzclk000dh0dse86t6hyp.html" title="如何检测处理器是否支持AES-NI指令集？">
+                        <span class="hidden-mobile">如何检测处理器是否支持AES-NI指令集？</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
