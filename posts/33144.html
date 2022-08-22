@@ -19,12 +19,12 @@
     <meta name="description" content="数据库基本操作命令#查看所有数据库； show databases;  #查看当前使用的数据库； select database();  #创建数据库： create database 数据库名 charset&#x3D;utf8；  #使用数据库： use 数据库名；  #删除数据库： drop database 数据库名；  查看表：#查看当前数据库中的所有表： 格式：show tables;  # 查">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL和sql语句学习记录">
-<meta property="og:url" content="http://92cloud.cn/posts/33144.html">
+<meta property="og:url" content="https://92cloud.cn/posts/33144.html">
 <meta property="og:site_name" content="Guoxh &#39;s blog">
 <meta property="og:description" content="数据库基本操作命令#查看所有数据库； show databases;  #查看当前使用的数据库； select database();  #创建数据库： create database 数据库名 charset&#x3D;utf8；  #使用数据库： use 数据库名；  #删除数据库： drop database 数据库名；  查看表：#查看当前数据库中的所有表： 格式：show tables;  # 查">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-06-03T11:30:21.000Z">
-<meta property="article:modified_time" content="2022-08-14T05:56:30.343Z">
+<meta property="article:modified_time" content="2022-08-22T05:46:47.278Z">
 <meta property="article:author" content="Guoxh">
 <meta property="article:tag" content="MySQL，SQL">
 <meta name="twitter:card" content="summary_large_image">
@@ -218,7 +218,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.9k 字
+          5.5k 字
         
       </span>
     
@@ -229,7 +229,7 @@
         
         
         
-          33 分钟
+          46 分钟
         
       </span>
     
@@ -348,7 +348,7 @@ insert into 表名 values(...);
 # 这里的0表示占位，主键自增长
 
 #部分列插入，值的顺序与给出的列顺序对应
-insert into	表名 (列1，列2...) values(值1，值2...);
+insert into    表名 (列1，列2...) values(值1，值2...);
 
 举例：insert into student(name,age) values(&#39;小红&#39;,18);
 
@@ -407,7 +407,7 @@ select distinct 字段名称 from 表名 ;
 #举例
 select distinct age from student ;
 </code></pre>
-<h3 id="where-比较运算查询"><a href="#where-比较运算查询" class="headerlink" title="where 比较运算查询"></a>where 比较运算查询</h3><p>​	使用 where 字句对表中的数据进行筛选，结果为true会出现在结果集中；</p>
+<h3 id="where-比较运算查询"><a href="#where-比较运算查询" class="headerlink" title="where 比较运算查询"></a>where 比较运算查询</h3><p>​    使用 where 字句对表中的数据进行筛选，结果为true会出现在结果集中；</p>
 <pre><code class="hljs">常见的比较运算符:
     等于 =
     大于 &gt;
@@ -479,7 +479,7 @@ select * from student where cls_id is null;
 2、查询不为空的信息
 select * from student where cls_id is not null;
 </code></pre>
-<h3 id="order排序查询"><a href="#order排序查询" class="headerlink" title="order排序查询"></a>order排序查询</h3><p>​	关键字 order by</p>
+<h3 id="order排序查询"><a href="#order排序查询" class="headerlink" title="order排序查询"></a>order排序查询</h3><p>​    关键字 order by</p>
 <pre><code class="hljs">语法：
 select * from 表名 order by 列1 [asc|desc] [,列2 asc|desc,...]
 
@@ -496,17 +496,17 @@ select * from student order by age desc;
 3、查询年龄大于15 的女性，按年龄降序
 select * from student where (age &gt; 15 and gender=&#39;女&#39;) order by age desc;
 </code></pre>
-<h3 id="聚合函数"><a href="#聚合函数" class="headerlink" title="聚合函数"></a>聚合函数</h3><p>​	作用：会把当前表当做一个组进行统计</p>
+<h3 id="聚合函数"><a href="#聚合函数" class="headerlink" title="聚合函数"></a>聚合函数</h3><p>​    作用：会把当前表当做一个组进行统计</p>
 <pre><code class="hljs">特点：
 每个组函数接受一个参数，一般为字段名或者表达式；
 统计结果中默认忽略字段为null 的记录
 不允许出现嵌套，比如sum(max(xx))
 
-count(字段)	：计算总数
-max(字段)	：求最大值
-min(字段)	：求最小值
-sum(字段)	：求字段之和
-avg(字段)	：求此字段平均值
+count(字段)    ：计算总数
+max(字段)    ：求最大值
+min(字段)    ：求最小值
+sum(字段)    ：求字段之和
+avg(字段)    ：求此字段平均值
 
 
 举例：
@@ -524,6 +524,85 @@ select round(avg(age),1) from student;
 举例：
 四舍五入展示身高这一列
 select name,round(high,1) from student ;
+</code></pre>
+<h3 id="group分组查询"><a href="#group分组查询" class="headerlink" title="group分组查询"></a>group分组查询</h3><pre><code class="hljs">所谓的分组就是将一个数据集  划分成若干个小区域，然后针对这个若干个 小区域 进行数据处理
+
+使用特点
+    group by 将查询结果按照1个 或多个字段进行分组 ，字段值相同的为一组
+    group by 可用于单个字段分组，也可用于多个字段分组
+
+举例：
+按性别分组，统计每个性别有多少人
+select gender,count(*) from student group by gender;
+
+group by + group_concat()作用：根据分组结果，使用grou_concat来放置每一个分组中某字段的集合
+
+举例：
+按性别分区，将每个性别里面的人名列出
+select gender,group_concat(name) from student group by gender;
+select gender as 性别,group_concat(name) as 人员列表 from student group by gender;
+
+group by + 聚合函数
+作用：聚合函数在和group by 结合使用的时候 统计的对象是每个分组
+举例：
+查看每个性别中年龄最大的是多大
+select gender,max(age) from student group by gender;
+
+group by + having 
+作用：对每个分组中的数据进行处理
+和where类似，但是having只能用于grou by对分组后的每组数据进行过滤，而where是用来过滤表数据
+例如：
+查询每个性别中年龄超过10岁的性别以及姓名
+select group_concat(name),gender from student group by gender having avg(age) &gt; 10;
+
+group by + with rollup
+作用：在数据表的字后新增一行，来记录当前表中该字段对应的操作结果，一般是汇总结果
+
+举例：
+统计每个年龄的数量，最后一行汇总
+select gender,count(*) from student group by gender with rollup;
+</code></pre>
+<p>limit限制擦和讯<br>    可以使用limit 限制取出记录的数量，但limit要卸载sql语句的最后</p>
+<pre><code class="hljs">语法：
+limit 起始记录，记录数
+
+起始记录是指从第几条开始取，第一条记录的下标是0
+记录数是指从起始记录开始向后依次取得记录数
+
+分页查询技巧：
+起始记录=（当前页数-1）x 每页个数
+</code></pre>
+<h2 id="连接查询："><a href="#连接查询：" class="headerlink" title="连接查询："></a>连接查询：</h2><h3 id="内连接："><a href="#内连接：" class="headerlink" title="内连接："></a>内连接：</h3><pre><code class="hljs">查询的结果为两个表符合条件的匹配到的数据
+
+    注意：
+    1、根据连接条件取出两个表的交集
+    2、on 是连接条件，where是连接后筛选条件
+
+    语法：
+    select 字段 from 表1 inner join 表2 on 表1.字段1=表2.字段2
+
+    举例：
+    1、查询每个学员对应的班级信息
+    select * from student inner join class on student.cls_id=class.id;
+
+    2、查询每个学员对应的班级信息，且仅显示姓名和班级信息；
+    select student.name,class.name from student inner join class on student.cls_id=class.id;
+</code></pre>
+<h3 id="外连接："><a href="#外连接：" class="headerlink" title="外连接："></a>外连接：</h3><p> 左连接：<br> 主表 left join 从表 on 连接条件<br> 左外连接查询：查询的结果为两个表匹配到的数据和左表特有的数据<br> 右连接：<br> 从表 right join 主表 on 连接条件<br> 右外连接查询：查询的结果为两个表匹配到的数据和右表特有的数据</p>
+<h3 id="自连接："><a href="#自连接：" class="headerlink" title="自连接："></a>自连接：</h3><p> 使用自连接查询只需要一个表就可以，可以加快查询速度，减少数据表占用空间<br> 自连接查询本质还是连接查询</p>
+<h3 id="子查询："><a href="#子查询：" class="headerlink" title="子查询："></a>子查询：</h3><pre><code class="hljs">把一个查询的结果当做另一个查询的条件
+
+三类：
+    标量子查询：子查询返回的结果是一个数据（一行一列）
+    列子查询：返回的结果是一例（一列多行）
+    行子查询：返回的结果是一行（一行多列）
+
+
+举例：
+1、查询平均身高
+select avg(age) from student;
+2、查询大于平均身高的信息
+select * from  student where age &gt; (select avg(age) from student);
 </code></pre>
 
               
@@ -549,7 +628,7 @@ select name,round(high,1) from student ;
   <div class="license-box my-3">
     <div class="license-title">
       <div>MySQL和sql语句学习记录</div>
-      <div>http://92cloud.cn/posts/33144.html</div>
+      <div>https://92cloud.cn/posts/33144.html</div>
     </div>
     <div class="license-meta">
       
