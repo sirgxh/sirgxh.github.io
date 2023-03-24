@@ -20,8 +20,8 @@ https://92cloud.cn/tags/Linux/
 https://92cloud.cn/tags/strace/
 https://92cloud.cn/tags/du/
 https://92cloud.cn/tags/sh/
-https://92cloud.cn/tags/Redhat/
 https://92cloud.cn/tags/ntp/
+https://92cloud.cn/tags/Redhat/
 https://92cloud.cn/tags/python/
 https://92cloud.cn/tags/Mac/
 https://92cloud.cn/tags/Windows/
