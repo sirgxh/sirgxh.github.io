@@ -23,17 +23,17 @@
 <meta property="og:site_name" content="Guoxh &#39;s blog">
 <meta property="og:description" content="问题描述系统重启后无法启动，vnc登录查看卡在如下页面，系统进入了 emergency mode  问题原因此问题大概率是&#x2F;etc&#x2F;fstab文件配置有问题导致系统无法挂载例如：1、数据盘设备名为vdb，而fstab里面设置的是vdc 2、数据盘文件系统是直接创建在vdb上面的，而fstab里面设置的是vdb1 3、数据盘文件系统为ext4，而fstab里面设置的是xfs 4、">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="c:/Users/gxh/AppData/Roaming/Typora/typora-user-images/image-20240312124819998.png">
-<meta property="og:image" content="c:/Users/gxh/AppData/Roaming/Typora/typora-user-images/image-20240312125400974.png">
-<meta property="og:image" content="c:/Users/gxh/AppData/Roaming/Typora/typora-user-images/image-20240312125621155.png">
-<meta property="og:image" content="c:/Users/gxh/AppData/Roaming/Typora/typora-user-images/image-20240312125526371.png">
+<meta property="og:image" content="https://92cloud.cn/img/fstab1.png">
+<meta property="og:image" content="https://92cloud.cn/img/fstab2.png">
+<meta property="og:image" content="https://92cloud.cn/img/fstab3.png">
+<meta property="og:image" content="https://92cloud.cn/img/fstab4.png">
 <meta property="article:published_time" content="2022-06-06T06:20:00.000Z">
-<meta property="article:modified_time" content="2024-03-12T04:57:10.161Z">
+<meta property="article:modified_time" content="2024-03-12T05:04:15.931Z">
 <meta property="article:author" content="Guoxh">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="fstab">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="c:/Users/gxh/AppData/Roaming/Typora/typora-user-images/image-20240312124819998.png">
+<meta name="twitter:image" content="https://92cloud.cn/img/fstab1.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -278,19 +278,19 @@
             <div class="markdown-body">
               
               <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>系统重启后无法启动，vnc登录查看卡在如下页面，系统进入了 emergency mode</p>
-<p><img src="C:\Users\gxh\AppData\Roaming\Typora\typora-user-images\image-20240312124819998.png" srcset="/img/loading.gif" lazyload alt="image-20240312124819998"></p>
+<p><img src="/img/fstab1.png" srcset="/img/loading.gif" lazyload></p>
 <h2 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h2><p>此问题大概率是&#x2F;etc&#x2F;fstab文件配置有问题导致系统无法挂载<br>例如：<br>1、数据盘设备名为vdb，而fstab里面设置的是vdc</p>
 <p>2、数据盘文件系统是直接创建在vdb上面的，而fstab里面设置的是vdb1</p>
 <p>3、数据盘文件系统为ext4，而fstab里面设置的是xfs</p>
 <p>4、文件系统有异常</p>
 <h2 id="排查思路"><a href="#排查思路" class="headerlink" title="排查思路"></a>排查思路</h2><p>1、上面的截图看不到明显的报错，可以在vnc窗口页面按 shift +上翻页 键，将页面上翻，可以看到红色报错</p>
 <p>如下图报错很明确，就是&#x2F;data 目录无法挂载</p>
-<p><img src="C:\Users\gxh\AppData\Roaming\Typora\typora-user-images\image-20240312125400974.png" srcset="/img/loading.gif" lazyload alt="image-20240312125400974"></p>
+<p><img src="/img/fstab2.png" srcset="/img/loading.gif" lazyload></p>
 <p>2、在此页面可以输入root密码进入紧急模式修复</p>
-<p><img src="C:\Users\gxh\AppData\Roaming\Typora\typora-user-images\image-20240312125621155.png" srcset="/img/loading.gif" lazyload alt="image-20240312125621155"></p>
+<p><img src="/img/fstab3.png" srcset="/img/loading.gif" lazyload></p>
 <p>3、编辑 &#x2F;etc&#x2F;fstab 文件，禁用&#x2F;data目录这一行</p>
 <p>注意：我这里禁用data这一行是因为我的这个实例上面报错就是&#x2F;data无法挂裁，具体禁用哪一行需要看第一步报错的目录</p>
-<p><img src="C:\Users\gxh\AppData\Roaming\Typora\typora-user-images\image-20240312125526371.png" srcset="/img/loading.gif" lazyload alt="image-20240312125526371"></p>
+<p><img src="/img/fstab4.png" srcset="/img/loading.gif" lazyload></p>
 <p>4、执行 systemctl reboot命令重启服务器或在控制台重启机器，这时不出意外就正常启动了：<br>后续可參考下面的文档设置数据盘开机自动挂载<br><a target="_blank" rel="noopener" href="https://cloud.tencent.com/document/product/362/53951">https://cloud.tencent.com/document/product/362/53951</a></p>
 
               
