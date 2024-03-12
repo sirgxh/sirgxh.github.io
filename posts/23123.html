@@ -16,27 +16,30 @@
   <meta name="author" content="Guoxh">
   <meta name="keywords" content="">
   
-    <meta name="description" content="问题描述nslookup 解析baidu域名可以正常解析，但是ping baidu.com 失败 报错如下  排查过程1、使用strace命令追踪查看系统调用过程，发现open &#x2F;etc目录下的大量文件报错权限不足 1234567891011121314151617181920212223242526272829303132333435[root@VM-80-27-centos ~]#">
+    <meta name="description" content="问题描述系统重启后无法启动，vnc登录查看卡在如下页面，系统进入了 emergency mode  问题原因此问题大概率是&#x2F;etc&#x2F;fstab文件配置有问题导致系统无法挂载例如：1、数据盘设备名为vdb，而fstab里面设置的是vdc 2、数据盘文件系统是直接创建在vdb上面的，而fstab里面设置的是vdb1 3、数据盘文件系统为ext4，而fstab里面设置的是xfs 4、">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux系统nslookup域名解析正常但是ping不通">
-<meta property="og:url" content="https://92cloud.cn/posts/40346.html">
+<meta property="og:title" content="Linux系统进入emergency mode模式如何解决">
+<meta property="og:url" content="https://92cloud.cn/posts/23123.html">
 <meta property="og:site_name" content="Guoxh &#39;s blog">
-<meta property="og:description" content="问题描述nslookup 解析baidu域名可以正常解析，但是ping baidu.com 失败 报错如下  排查过程1、使用strace命令追踪查看系统调用过程，发现open &#x2F;etc目录下的大量文件报错权限不足 1234567891011121314151617181920212223242526272829303132333435[root@VM-80-27-centos ~]#">
+<meta property="og:description" content="问题描述系统重启后无法启动，vnc登录查看卡在如下页面，系统进入了 emergency mode  问题原因此问题大概率是&#x2F;etc&#x2F;fstab文件配置有问题导致系统无法挂载例如：1、数据盘设备名为vdb，而fstab里面设置的是vdc 2、数据盘文件系统是直接创建在vdb上面的，而fstab里面设置的是vdb1 3、数据盘文件系统为ext4，而fstab里面设置的是xfs 4、">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://xx-1253778947.cos.ap-beijing.myqcloud.com/607ece5a5bafa9dd77a9c7f99120e90d.jpeg">
-<meta property="article:published_time" content="2022-06-07T03:11:00.000Z">
-<meta property="article:modified_time" content="2023-03-24T07:54:39.677Z">
+<meta property="og:image" content="c:/Users/gxh/AppData/Roaming/Typora/typora-user-images/image-20240312124819998.png">
+<meta property="og:image" content="c:/Users/gxh/AppData/Roaming/Typora/typora-user-images/image-20240312125400974.png">
+<meta property="og:image" content="c:/Users/gxh/AppData/Roaming/Typora/typora-user-images/image-20240312125621155.png">
+<meta property="og:image" content="c:/Users/gxh/AppData/Roaming/Typora/typora-user-images/image-20240312125526371.png">
+<meta property="article:published_time" content="2022-06-06T06:20:00.000Z">
+<meta property="article:modified_time" content="2024-03-12T04:57:10.161Z">
 <meta property="article:author" content="Guoxh">
 <meta property="article:tag" content="Linux">
-<meta property="article:tag" content="strace">
+<meta property="article:tag" content="fstab">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://xx-1253778947.cos.ap-beijing.myqcloud.com/607ece5a5bafa9dd77a9c7f99120e90d.jpeg">
+<meta name="twitter:image" content="c:/Users/gxh/AppData/Roaming/Typora/typora-user-images/image-20240312124819998.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Linux系统nslookup域名解析正常但是ping不通 - Guoxh &#39;s blog</title>
+  <title>Linux系统进入emergency mode模式如何解决 - Guoxh &#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -198,7 +201,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Linux系统nslookup域名解析正常但是ping不通"></span>
+            <span id="subtitle" data-typed-text="Linux系统进入emergency mode模式如何解决"></span>
           
         </div>
 
@@ -209,8 +212,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-06-07 11:11" pubdate>
-          2022年6月7日 上午
+        <time datetime="2022-06-06 14:20" pubdate>
+          2022年6月6日 下午
         </time>
       </span>
     
@@ -221,7 +224,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          5k 字
+          536 字
         
       </span>
     
@@ -232,7 +235,7 @@
         
         
         
-          42 分钟
+          5 分钟
         
       </span>
     
@@ -270,27 +273,25 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Linux系统nslookup域名解析正常但是ping不通</h1>
+            <h1 style="display: none">Linux系统进入emergency mode模式如何解决</h1>
             
             <div class="markdown-body">
               
-              <h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>nslookup 解析baidu域名可以正常解析，但是ping baidu.com 失败</p>
-<p>报错如下</p>
-<p><img src="https://xx-1253778947.cos.ap-beijing.myqcloud.com/607ece5a5bafa9dd77a9c7f99120e90d.jpeg" srcset="/img/loading.gif" lazyload alt="报错截图"></p>
-<h1 id="排查过程"><a href="#排查过程" class="headerlink" title="排查过程"></a>排查过程</h1><p>1、使用strace命令追踪查看系统调用过程，发现open &#x2F;etc目录下的大量文件报错权限不足</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@VM-80-27-centos ~]# strace -o /tmp/pingstrace.txt -tttT -s 1000 ping baidu.com<br>ping: baidu.com: 域名解析暂时失败<br>[root@VM-80-27-centos ~]# <br>[root@VM-80-27-centos ~]# grep open /tmp/pingstrace.txt <br>1659803039.797457 open(&quot;/etc/ld.so.preload&quot;, O_RDONLY|O_CLOEXEC) = 3 &lt;0.000010&gt;<br>1659803039.797816 open(&quot;/lib64/libonion.so&quot;, O_RDONLY|O_CLOEXEC) = 3 &lt;0.000023&gt;<br>1659803039.798298 open(&quot;/etc/ld.so.cache&quot;, O_RDONLY|O_CLOEXEC) = 3 &lt;0.000020&gt;<br>1659803039.798506 open(&quot;/lib64/libcap.so.2&quot;, O_RDONLY|O_CLOEXEC) = 3 &lt;0.000021&gt;<br>1659803039.798907 open(&quot;/lib64/libidn.so.11&quot;, O_RDONLY|O_CLOEXEC) = 3 &lt;0.000022&gt;<br>1659803039.799334 open(&quot;/lib64/libcrypto.so.10&quot;, O_RDONLY|O_CLOEXEC) = 3 &lt;0.000022&gt;<br>1659803039.799789 open(&quot;/lib64/libresolv.so.2&quot;, O_RDONLY|O_CLOEXEC) = 3 &lt;0.000023&gt;<br>1659803039.800226 open(&quot;/lib64/libm.so.6&quot;, O_RDONLY|O_CLOEXEC) = 3 &lt;0.000022&gt;<br>1659803039.800664 open(&quot;/lib64/libc.so.6&quot;, O_RDONLY|O_CLOEXEC) = 3 &lt;0.000021&gt;<br>1659803039.801120 open(&quot;/lib64/libdl.so.2&quot;, O_RDONLY|O_CLOEXEC) = 3 &lt;0.000021&gt;<br>1659803039.801494 open(&quot;/lib64/libattr.so.1&quot;, O_RDONLY|O_CLOEXEC) = 3 &lt;0.000021&gt;<br>1659803039.801959 open(&quot;/lib64/libz.so.1&quot;, O_RDONLY|O_CLOEXEC) = 3 &lt;0.000021&gt;<br>1659803039.804175 open(&quot;/etc/pki/tls/legacy-settings&quot;, O_RDONLY) = -1 ENOENT (没有那个文件或目录) &lt;0.000021&gt;<br>1659803039.804847 open(&quot;/usr/lib/locale/locale-archive&quot;, O_RDONLY|O_CLOEXEC) = 3 &lt;0.000022&gt;<br>1659803039.805883 open(&quot;/etc/nsswitch.conf&quot;, O_RDONLY|O_CLOEXEC) = -1 EACCES (权限不够) &lt;0.000019&gt;<br>1659803039.806002 open(&quot;/etc/host.conf&quot;, O_RDONLY|O_CLOEXEC) = -1 EACCES (权限不够) &lt;0.000020&gt;<br>1659803039.806054 open(&quot;/etc/resolv.conf&quot;, O_RDONLY|O_CLOEXEC) = -1 EACCES (权限不够) &lt;0.000019&gt;<br>1659803039.806169 open(&quot;/etc/ld.so.cache&quot;, O_RDONLY|O_CLOEXEC) = -1 EACCES (权限不够) &lt;0.000019&gt;<br>1659803039.806221 open(&quot;/lib64/tls/x86_64/libnss_dns.so.2&quot;, O_RDONLY|O_CLOEXEC) = -1 ENOENT (没有那个文件或目录) &lt;0.000021&gt;<br>1659803039.806324 open(&quot;/lib64/tls/libnss_dns.so.2&quot;, O_RDONLY|O_CLOEXEC) = -1 ENOENT (没有那个文件或目录) &lt;0.000020&gt;<br>1659803039.806429 open(&quot;/lib64/x86_64/libnss_dns.so.2&quot;, O_RDONLY|O_CLOEXEC) = -1 ENOENT (没有那个文件或目录) &lt;0.000020&gt;<br>1659803039.806536 open(&quot;/lib64/libnss_dns.so.2&quot;, O_RDONLY|O_CLOEXEC) = 4 &lt;0.000021&gt;<br>1659803039.807975 open(&quot;/lib64/tls/libnss_files.so.2&quot;, O_RDONLY|O_CLOEXEC) = -1 ENOENT (没有那个文件或目录) &lt;0.000023&gt;<br>1659803039.808038 open(&quot;/lib64/libnss_files.so.2&quot;, O_RDONLY|O_CLOEXEC) = 4 &lt;0.000023&gt;<br>1659803039.808654 open(&quot;/etc/hosts&quot;, O_RDONLY|O_CLOEXEC) = -1 EACCES (权限不够) &lt;0.000021&gt;<br>1659803039.808719 open(&quot;/usr/share/locale/locale.alias&quot;, O_RDONLY|O_CLOEXEC) = 4 &lt;0.000031&gt;<br>1659803039.809155 open(&quot;/usr/share/locale/zh_CN.UTF-8/LC_MESSAGES/libc.mo&quot;, O_RDONLY) = -1 ENOENT (没有那个文件或目录) &lt;0.000022&gt;<br>1659803039.809210 open(&quot;/usr/share/locale/zh_CN.utf8/LC_MESSAGES/libc.mo&quot;, O_RDONLY) = -1 ENOENT (没有那个文件或目录) &lt;0.000021&gt;<br>1659803039.809264 open(&quot;/usr/share/locale/zh_CN/LC_MESSAGES/libc.mo&quot;, O_RDONLY) = 4 &lt;0.000023&gt;<br>1659803039.809494 open(&quot;/usr/lib64/gconv/gconv-modules.cache&quot;, O_RDONLY) = 4 &lt;0.000023&gt;<br>[root@VM-80-27-centos ~]# <br></code></pre></td></tr></table></figure>
-
-<p>2、检查提示权限不足的这些文件，权限和正常服务器是正常的</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@VM-80-27-centos ~]# ll /etc/resolv.conf <br>-rw-r--r-- 1 root root 89 8月   5 23:38 /etc/resolv.conf<br>[root@VM-80-27-centos ~]# lsattr /etc/resolv.conf<br>-------------e-- /etc/resolv.conf<br>[root@VM-80-27-centos ~]# <br></code></pre></td></tr></table></figure>
-
-<p>xxxxxxxxxx # -<em>- coding: utf-8 -</em>-“””linux system word to pdf”””import subprocessdef doc2pdf_linux(docPath, pdfPath):    “””    convert a doc&#x2F;docx document to pdf format (linux only, requires libreoffice)    :param doc: path to document    “””    # 转换word to pdf主要命令    cmd &#x3D; ‘libreoffice –headless –convert-to pdf’.split() + [docPath] + [‘–outdir’] + [pdfPath]    # 开启一个进程执行这个转换命令    p &#x3D; subprocess.Popen(cmd, stderr&#x3D;subprocess.PIPE, stdout&#x3D;subprocess.PIPE)    # 设置30秒超时    p.wait(timeout&#x3D;30)    # 将该命令的标准输出和错误输出赋值给两个变量名称    stdout, stderr &#x3D; p.communicate()    # 如果错误输出存在，则抛出异常    if stderr:        raise subprocess.SubprocessError(stderr)if <strong>name</strong> &#x3D;&#x3D; ‘<strong>main</strong>‘:    wordpath&#x3D;’&#x2F;data&#x2F;demo.docx’    pdfpath&#x3D;’&#x2F;data&#x2F;test&#x2F;‘    doc2pdf_linux(wordpath,pdfpath)python</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@VM-80-27-centos ~]# getenforce <br>Disabled<br></code></pre></td></tr></table></figure>
-
-<p>4、检查这些文件上层目录&#x2F;etc，发现缺少可执行权限</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@VM-80-27-centos ~]# ls -ld /etc<br>drw-r--r--. 99 root root 12288 8月   5 19:16 /etc<br></code></pre></td></tr></table></figure>
-
-<p>5、 手动添加可执行权限后恢复正常。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@VM-80-27-centos ~]# chmod 755 /etc<br>[root@VM-80-27-centos ~]# <br>[root@VM-80-27-centos ~]# ping baidu.com<br>PING baidu.com (110.242.68.66) 56(84) bytes of data.<br>64 bytes from 110.242.68.66 (110.242.68.66): icmp_seq=1 ttl=251 time=10.6 ms<br>64 bytes from 110.242.68.66 (110.242.68.66): icmp_seq=2 ttl=251 time=10.6 ms<br>64 bytes from 110.242.68.66 (110.242.68.66): icmp_seq=3 ttl=251 time=10.6 ms<br>^C<br>--- baidu.com ping statistics ---<br>3 packets transmitted, 3 received, 0% packet loss, time 2001ms<br>rtt min/avg/max/mdev = 10.605/10.614/10.625/0.008 ms<br>[root@VM-80-27-centos ~]# <br></code></pre></td></tr></table></figure>
+              <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>系统重启后无法启动，vnc登录查看卡在如下页面，系统进入了 emergency mode</p>
+<p><img src="C:\Users\gxh\AppData\Roaming\Typora\typora-user-images\image-20240312124819998.png" srcset="/img/loading.gif" lazyload alt="image-20240312124819998"></p>
+<h2 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h2><p>此问题大概率是&#x2F;etc&#x2F;fstab文件配置有问题导致系统无法挂载<br>例如：<br>1、数据盘设备名为vdb，而fstab里面设置的是vdc</p>
+<p>2、数据盘文件系统是直接创建在vdb上面的，而fstab里面设置的是vdb1</p>
+<p>3、数据盘文件系统为ext4，而fstab里面设置的是xfs</p>
+<p>4、文件系统有异常</p>
+<h2 id="排查思路"><a href="#排查思路" class="headerlink" title="排查思路"></a>排查思路</h2><p>1、上面的截图看不到明显的报错，可以在vnc窗口页面按 shift +上翻页 键，将页面上翻，可以看到红色报错</p>
+<p>如下图报错很明确，就是&#x2F;data 目录无法挂载</p>
+<p><img src="C:\Users\gxh\AppData\Roaming\Typora\typora-user-images\image-20240312125400974.png" srcset="/img/loading.gif" lazyload alt="image-20240312125400974"></p>
+<p>2、在此页面可以输入root密码进入紧急模式修复</p>
+<p><img src="C:\Users\gxh\AppData\Roaming\Typora\typora-user-images\image-20240312125621155.png" srcset="/img/loading.gif" lazyload alt="image-20240312125621155"></p>
+<p>3、编辑 &#x2F;etc&#x2F;fstab 文件，禁用&#x2F;data目录这一行</p>
+<p>注意：我这里禁用data这一行是因为我的这个实例上面报错就是&#x2F;data无法挂裁，具体禁用哪一行需要看第一步报错的目录</p>
+<p><img src="C:\Users\gxh\AppData\Roaming\Typora\typora-user-images\image-20240312125526371.png" srcset="/img/loading.gif" lazyload alt="image-20240312125526371"></p>
+<p>4、执行 systemctl reboot命令重启服务器或在控制台重启机器，这时不出意外就正常启动了：<br>后续可參考下面的文档设置数据盘开机自动挂载<br><a target="_blank" rel="noopener" href="https://cloud.tencent.com/document/product/362/53951">https://cloud.tencent.com/document/product/362/53951</a></p>
 
               
             </div>
@@ -304,7 +305,7 @@
       
         <a href="/tags/Linux/">#Linux</a>
       
-        <a href="/tags/strace/">#strace</a>
+        <a href="/tags/fstab/">#fstab</a>
       
     </div>
   
@@ -316,8 +317,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Linux系统nslookup域名解析正常但是ping不通</div>
-      <div>https://92cloud.cn/posts/40346.html</div>
+      <div>Linux系统进入emergency mode模式如何解决</div>
+      <div>https://92cloud.cn/posts/23123.html</div>
     </div>
     <div class="license-meta">
       
@@ -329,7 +330,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年6月7日</div>
+          <div>2022年6月6日</div>
         </div>
       
       
@@ -359,9 +360,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/27017.html" title="Linux系统python3使用libreoffice将word转换为pdf文件">
+                      <a href="/posts/40346.html" title="Linux系统nslookup域名解析正常但是ping不通">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Linux系统python3使用libreoffice将word转换为pdf文件</span>
+                        <span class="hidden-mobile">Linux系统nslookup域名解析正常但是ping不通</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -369,8 +370,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/23123.html" title="Linux系统进入emergency mode模式如何解决">
-                        <span class="hidden-mobile">Linux系统进入emergency mode模式如何解决</span>
+                      <a href="/posts/24572.html" title="Centos系统使用passwd命令修改密码报错 Authentication token manipulation error">
+                        <span class="hidden-mobile">Centos系统使用passwd命令修改密码报错 Authentication token manipulation error</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

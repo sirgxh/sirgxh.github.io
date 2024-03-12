@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://92cloud.cn/posts/23123.html</loc>
+    
+    <lastmod>2024-03-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://92cloud.cn/posts/40346.html</loc>
     
     <lastmod>2023-03-24</lastmod>
@@ -139,7 +148,7 @@
 
   <url>
     <loc>https://92cloud.cn/</loc>
-    <lastmod>2023-03-24</lastmod>
+    <lastmod>2024-03-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -147,84 +156,91 @@
   
   <url>
     <loc>https://92cloud.cn/tags/Redhat/</loc>
-    <lastmod>2023-03-24</lastmod>
+    <lastmod>2024-03-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://92cloud.cn/tags/MySQL%EF%BC%8CSQL-database/</loc>
-    <lastmod>2023-03-24</lastmod>
+    <lastmod>2024-03-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://92cloud.cn/tags/Linux/</loc>
-    <lastmod>2023-03-24</lastmod>
+    <lastmod>2024-03-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://92cloud.cn/tags/Mac/</loc>
-    <lastmod>2023-03-24</lastmod>
+    <lastmod>2024-03-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://92cloud.cn/tags/Windows/</loc>
-    <lastmod>2023-03-24</lastmod>
+    <lastmod>2024-03-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://92cloud.cn/tags/du/</loc>
-    <lastmod>2023-03-24</lastmod>
+    <lastmod>2024-03-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://92cloud.cn/tags/sh/</loc>
-    <lastmod>2023-03-24</lastmod>
+    <lastmod>2024-03-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://92cloud.cn/tags/fstab/</loc>
+    <lastmod>2024-03-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://92cloud.cn/tags/hexo/</loc>
-    <lastmod>2023-03-24</lastmod>
+    <lastmod>2024-03-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://92cloud.cn/tags/ubuntu/</loc>
-    <lastmod>2023-03-24</lastmod>
+    <lastmod>2024-03-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://92cloud.cn/tags/ntp/</loc>
-    <lastmod>2023-03-24</lastmod>
+    <lastmod>2024-03-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://92cloud.cn/tags/strace/</loc>
-    <lastmod>2023-03-24</lastmod>
+    <lastmod>2024-03-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://92cloud.cn/tags/python/</loc>
-    <lastmod>2023-03-24</lastmod>
+    <lastmod>2024-03-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>

@@ -1,3 +1,4 @@
+https://92cloud.cn/posts/23123.html
 https://92cloud.cn/posts/40346.html
 https://92cloud.cn/posts/33144.html
 https://92cloud.cn/posts/16107.html
@@ -21,6 +22,7 @@ https://92cloud.cn/tags/Mac/
 https://92cloud.cn/tags/Windows/
 https://92cloud.cn/tags/du/
 https://92cloud.cn/tags/sh/
+https://92cloud.cn/tags/fstab/
 https://92cloud.cn/tags/hexo/
 https://92cloud.cn/tags/ubuntu/
 https://92cloud.cn/tags/ntp/
